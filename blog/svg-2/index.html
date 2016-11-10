@@ -1,0 +1,968 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="/css/fonts_googleapis.css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="svg," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="基本形状12345678910111213141516&amp;lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;200&quot; height=&quot;250&quot;&amp;gt;  &amp;lt;rect x=&quot;10&quot; y=&quot;10&quot; width=&quot;30&quot; height=&quot;30&quot; stroke=&quot;black&quot; fill=&quot;transparent&quot; stroke">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5之图形的未来-svg图形绘制、文本与图像">
+<meta property="og:url" content="http://azq.space/blog/svg-2/index.html">
+<meta property="og:site_name" content="安安安志清">
+<meta property="og:description" content="基本形状12345678910111213141516&amp;lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;200&quot; height=&quot;250&quot;&amp;gt;  &amp;lt;rect x=&quot;10&quot; y=&quot;10&quot; width=&quot;30&quot; height=&quot;30&quot; stroke=&quot;black&quot; fill=&quot;transparent&quot; stroke">
+<meta property="og:image" content="http://7xif9n.com1.z0.glb.clouddn.com/svg.png">
+<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/363/=ShortCut_Cubic_Bezier.png">
+<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/326/=Quadratic_Bezier.png">
+<meta property="og:image" content="https://developer.mozilla.org/@api/deki/files/364/=Shortcut_Quadratic_Bezier.png">
+<meta property="og:updated_time" content="2016-09-22T14:32:48.366Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5之图形的未来-svg图形绘制、文本与图像">
+<meta name="twitter:description" content="基本形状12345678910111213141516&amp;lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;200&quot; height=&quot;250&quot;&amp;gt;  &amp;lt;rect x=&quot;10&quot; y=&quot;10&quot; width=&quot;30&quot; height=&quot;30&quot; stroke=&quot;black&quot; fill=&quot;transparent&quot; stroke">
+<meta name="twitter:image" content="http://7xif9n.com1.z0.glb.clouddn.com/svg.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '8820454',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://azq.space/blog/svg-2/"/>
+
+
+  <title> html5之图形的未来-svg图形绘制、文本与图像 | 安安安志清 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2f842a6d2280c26b5d7bc63d6cb4374e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">安安安志清</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一个大前端初学者的艰难学习之路</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                html5之图形的未来-svg图形绘制、文本与图像
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-17T11:34:00+08:00" content="2016-03-17">
+              2016-03-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/html5标签探索系列/" itemprop="url" rel="index">
+                    <span itemprop="name">html5标签探索系列</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/svg-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/svg-2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/svg-2/" class="leancloud_visitors" data-flag-title="html5之图形的未来-svg图形绘制、文本与图像">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="基本形状"><a href="#基本形状" class="headerlink" title="基本形状"></a>基本形状</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> <span class="attr">version</span>=<span class="string">"1.1"</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"250"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"10"</span> <span class="attr">y</span>=<span class="string">"10"</span> <span class="attr">width</span>=<span class="string">"30"</span> <span class="attr">height</span>=<span class="string">"30"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"60"</span> <span class="attr">y</span>=<span class="string">"10"</span> <span class="attr">rx</span>=<span class="string">"10"</span> <span class="attr">ry</span>=<span class="string">"10"</span> <span class="attr">width</span>=<span class="string">"30"</span> <span class="attr">height</span>=<span class="string">"30"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"25"</span> <span class="attr">cy</span>=<span class="string">"75"</span> <span class="attr">r</span>=<span class="string">"20"</span> <span class="attr">stroke</span>=<span class="string">"red"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ellipse</span> <span class="attr">cx</span>=<span class="string">"75"</span> <span class="attr">cy</span>=<span class="string">"75"</span> <span class="attr">rx</span>=<span class="string">"20"</span> <span class="attr">ry</span>=<span class="string">"5"</span> <span class="attr">stroke</span>=<span class="string">"red"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">line</span> <span class="attr">x1</span>=<span class="string">"10"</span> <span class="attr">x2</span>=<span class="string">"50"</span> <span class="attr">y1</span>=<span class="string">"110"</span> <span class="attr">y2</span>=<span class="string">"150"</span> <span class="attr">stroke</span>=<span class="string">"orange"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">polyline</span> <span class="attr">points</span>=<span class="string">"60 110 65 120 70 115 75 130 80 125 85 140 90 135 95 150 100 145"</span></span></div><div class="line">      <span class="attr">stroke</span>=<span class="string">"orange"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">polygon</span> <span class="attr">points</span>=<span class="string">"50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180"</span></span></div><div class="line">      <span class="attr">stroke</span>=<span class="string">"green"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M20,230 Q40,205 50,230 T90,230"</span> <span class="attr">fill</span>=<span class="string">"none"</span> <span class="attr">stroke</span>=<span class="string">"blue"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://7xif9n.com1.z0.glb.clouddn.com/svg.png"><br>这个例子画了很多形状：正常的矩形，带圆角的矩形，圆形，椭圆形，直线，折线，多边形，还有路径。这些都属于基本的图形元素。<br><a id="more"></a></p>
+<h3 id="矩形-rect元素"><a href="#矩形-rect元素" class="headerlink" title="矩形 - rect元素"></a>矩形 - rect元素</h3><p>这个元素有6个控制位置和形状的属性，分别是：<br>x：矩形左上角的坐标(用户坐标系)的x值。<br>y：矩形左上角的坐标(用户坐标系)的y值。<br>width：矩形宽度。<br>height：矩形高度。<br>rx：实现圆角效果时，圆角沿x轴的半径。<br>ry：实现圆角效果时，圆角沿y轴的半径。<br>比如上面例子中，实现了圆角效果，你也可以通过设置rx,ry为不同的值实现椭圆角效果。</p>
+<h3 id="圆-circle元素"><a href="#圆-circle元素" class="headerlink" title="圆 - circle元素"></a>圆 - circle元素</h3><p>这个元素的属性很简单，主要是定义圆心和半径：<br>r：圆的半径。<br>cx：圆心坐标x值。<br>cy：圆心坐标y值。</p>
+<h3 id="椭圆-ellipse元素"><a href="#椭圆-ellipse元素" class="headerlink" title="椭圆 - ellipse元素"></a>椭圆 - ellipse元素</h3><p>这个是更加通用的圆形元素，你可以分别控制半长轴和半短轴的长度，来实现不同的椭圆，很容易想到，当两个半轴相等时，就是正圆形了。<br>rx：半长轴(x半径)。<br>ry：半短轴(y半径)。<br>cx：圆心坐标x值。<br>cy：圆心坐标y值。</p>
+<h3 id="折线-polyline元素"><a href="#折线-polyline元素" class="headerlink" title="折线 - polyline元素"></a>折线 - polyline元素</h3><p>折线主要是要定义每条线段的端点即可，所以只需要一个点的集合作为参数：<br>points：一系列的用空格，逗号，换行符等分隔开的点。每个点必须有2个数字：x值和y值。所以下面3个点 (0,0), (1,1)和(2,2)可以写成：”0 0, 1 1, 2 2”。</p>
+<h3 id="多边形-polygon元素"><a href="#多边形-polygon元素" class="headerlink" title="多边形 - polygon元素"></a>多边形 - polygon元素</h3><p>这个元素就是比polyline元素多做一步，把最后一个点和第一个点连起来，形成闭合图形。参数是一样的。<br>points：一系列的用空格，逗号，换行符等分隔开的点。每个点必须有2个数字：x值和y值。所以下面3个点 (0,0), (1,1)和(2,2)可以写成：”0 0, 1 1, 2 2”。</p>
+<p>ps:矩形，折线，多边形可以说是直线的扩展</p>
+<h3 id="路径-path元素"><a href="#路径-path元素" class="headerlink" title="路径 - path元素"></a>路径 - path元素</h3><p>这个是最通用，最强力的元素了；使用这个元素你可以实现任何其他的图形，不仅包括上面这些基本形状，也可以实现像贝塞尔曲线那样的复杂形状；此外，使用path可以实现平滑的过渡线段，虽然也可以使用polyline来实现这种效果，但是需要提供的点很多，而且放大了效果也不好。这个元素控制位置和形状的只有一个参数：<br>d：一系列绘制指令和绘制参数(点)组合成。<br>　　绘制指令分为绝对坐标指令和相对坐标指令两种，这两种指令使用的字母是一样的，就是大小写不一样，绝对指令使用大写字母，坐标也是绝对坐标；相对指令使用对应的小写字母，点的坐标表示的都是偏移量。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">指令</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">M</td>
+<td style="text-align:center">x y</td>
+<td style="text-align:center">将画笔移动到点(x,y)</td>
+</tr>
+<tr>
+<td style="text-align:center">L</td>
+<td style="text-align:center">x y</td>
+<td style="text-align:center">画笔从当前的点绘制线段到点(x,y)</td>
+</tr>
+<tr>
+<td style="text-align:center">H</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">画笔从当前的点绘制水平线段到点(x,y0)</td>
+</tr>
+<tr>
+<td style="text-align:center">V</td>
+<td style="text-align:center">y</td>
+<td style="text-align:center">画笔从当前的点绘制竖直线段到点(x0,y)</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">rx ry x-axis-rotation large-arc-flag sweep-flag x y</td>
+<td style="text-align:center">画笔从当前的点绘制一段圆弧到点(x,y)</td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">x1 y1, x2 y2, x y</td>
+<td style="text-align:center">画笔从当前的点绘制一段三次贝塞尔曲线到点(x,y)</td>
+</tr>
+<tr>
+<td style="text-align:center">S</td>
+<td style="text-align:center">x2 y2, x y</td>
+<td style="text-align:center">特殊版本的三次贝塞尔曲线(省略第一个控制点)</td>
+</tr>
+<tr>
+<td style="text-align:center">Q</td>
+<td style="text-align:center">x1 y1, x y</td>
+<td style="text-align:center">绘制二次贝塞尔曲线到点(x,y)</td>
+</tr>
+<tr>
+<td style="text-align:center">T</td>
+<td style="text-align:center">x y</td>
+<td style="text-align:center">特殊版本的二次贝塞尔曲线(省略控制点)</td>
+</tr>
+<tr>
+<td style="text-align:center">Z</td>
+<td style="text-align:center">无参数</td>
+<td style="text-align:center">绘制闭合图形，如果d属性不指定Z命令，则绘制线段，而不是封闭图形。</td>
+</tr>
+</tbody>
+</table>
+<p>　移动画笔指令M，画直线指令：L，H，V，闭合指令Z都比较简单；下面重点看看绘制曲线的几个指令。</p>
+<p><strong>绘制圆弧指令：A  rx ry x-axis-rotation large-arc-flag sweep-flag x y</strong></p>
+<p>用圆弧连接2个点比较复杂，情况也很多，所以这个命令有7个参数，分别控制曲线的的各个属性。下面解释一下数值的含义：<br>rx,ry 是弧的半长轴、半短轴长度<br>x-axis-rotation 是此段弧所在的x轴与水平方向的夹角，即x轴的逆时针旋转角度，负数代表顺时针转动的角度。<br>large-arc-flag 为1 表示大角度弧线，0 代表小角度弧线。<br>sweep-flag 为1代表从起点到终点弧线绕中心顺时针方向，0 代表逆时针方向。<br>x,y 是弧终端坐标。<br>　　前两个参数和后两个参数就不多说了，很简单；下面就说说中间的3个参数：<br>x-axis-rotation代表旋转的角度，体会下面例子中圆弧的不同：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"320px"</span> <span class="attr">height</span>=<span class="string">"320px"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M10 315</span></span></div><div class="line">           L 110 215</div><div class="line">           A 30 50 0 0 1 162.55 162.45</div><div class="line">           L 172.55 152.45</div><div class="line">           A 30 50 -45 0 1 215.1 109.9</div><div class="line">           L 315 10" <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"green"</span> <span class="attr">stroke-width</span>=<span class="string">"2"</span> <span class="attr">fill-opacity</span>=<span class="string">"0.5"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>从图中可以看到椭圆旋转参数的不同导致绘制的圆弧方向不同，当然这个参数对正圆来说没有影响。<br>large-arc-flag和sweep-flag控制了圆弧的大小和走向，体会下面例子中圆弧的不同：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"325px"</span> <span class="attr">height</span>=<span class="string">"325px"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M80 80</span></span></div><div class="line">           A 45 45, 0, 0, 0, 125 125</div><div class="line">           L 125 80 Z" <span class="attr">fill</span>=<span class="string">"green"</span>/&gt;<span class="comment">&lt;!--小角度逆时针--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M230 80</span></span></div><div class="line">           A 45 45, 0, 1, 0, 275 125</div><div class="line">           L 275 80 Z" <span class="attr">fill</span>=<span class="string">"red"</span>/&gt;<span class="comment">&lt;!--大角度逆时针--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M80 230</span></span></div><div class="line">           A 45 45, 0, 0, 1, 125 275</div><div class="line">           L 125 230 Z" <span class="attr">fill</span>=<span class="string">"purple"</span>/&gt;<span class="comment">&lt;!--小角度顺时针--&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M230 230</span></span></div><div class="line">           A 45 45, 0, 1, 1, 275 275</div><div class="line">           L 275 230 Z" <span class="attr">fill</span>=<span class="string">"blue"</span>/&gt;<span class="comment">&lt;!--大角度顺时针--&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>中间的三个参数是控制圆弧的主要参数，比canvas复杂许多</p>
+<p><strong>绘制三次贝塞尔曲线指令：C  x1 y1, x2 y2, x y </strong><br>三次贝塞尔曲线有两个控制点，就是(x1,y1)和(x2,y2)，最后面(x,y)代表曲线的终点。体会下面的例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"190px"</span> <span class="attr">height</span>=<span class="string">"160px"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M10 10 C 20 20, 40 20, 50 10"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M70 10 C 70 20, 120 20, 120 10"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M130 10 C 120 20, 180 20, 170 10"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M10 60 C 20 80, 40 80, 50 60"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M70 60 C 70 80, 110 80, 110 60"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M130 60 C 120 80, 180 80, 170 60"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M10 110 C 20 140, 40 140, 50 110"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M70 110 C 70 140, 110 140, 110 110"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M130 110 C 120 140, 180 140, 170 110"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--起始点和c的第一个点连线，c的第二和第三个连线，分别是弧两边的切线--&gt;</span></div></pre></td></tr></table></figure></p>
+<p><strong>特殊版本的三次贝塞尔曲线：S  x2 y2, x y</strong><br>很多时候，为了绘制平滑的曲线，需要多次连续绘制曲线。这个时候，为了平滑过渡，常常第二个曲线的控制点是第一个曲线控制点在曲线另外一边的映射点。这个时候可以使用这个简化版本。这里要注意的是，如果S指令前面没有其他的S指令或C指令，这个时候会认为两个控制点是一样的，退化成二次贝塞尔曲线的样子；如果S指令是用在另外一个S指令或者C指令后面，这个时候后面这个S指令的第一个控制点会默认设置为前面的这个曲线的第二个控制点的一个映射点，体会一下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"190px"</span> <span class="attr">height</span>=<span class="string">"160px"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--s应该是和c的右面的切线是一样的--&gt;</span></div></pre></td></tr></table></figure></p>
+<p><img src="https://developer.mozilla.org/@api/deki/files/363/=ShortCut_Cubic_Bezier.png"><br>上面的S指令只有第二个控制点，第一个控制点采用了前面的曲线指令的第二个控制点的一个映射点。</p>
+<p><strong>绘制二次贝塞尔曲线指令：Q  x1 y1, x y ， T x y  (特殊版本的二次贝塞尔曲线)</strong><br>二次贝塞尔曲线只有一个控制点(x1,y1)，通常如下图所示：<br><img src="https://developer.mozilla.org/@api/deki/files/326/=Quadratic_Bezier.png"><br>如果是连续的绘制曲线，同样可以使用简化版本T。同样的，只有T前面是Q或者T指令的时候，后面的T指令的控制点会默认设置为前面的曲线的控制点的映射点，体会一下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"190px"</span> <span class="attr">height</span>=<span class="string">"160px"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M10 80 Q 52.5 10, 95 80 T 180 80"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><img src="https://developer.mozilla.org/@api/deki/files/364/=Shortcut_Quadratic_Bezier.png"><br>同样的，如果T指令前面不是Q或者T指令，则认为无控制点，画出来的是直线。</p>
+<h3 id="相对坐标绘制指令"><a href="#相对坐标绘制指令" class="headerlink" title="相对坐标绘制指令"></a>相对坐标绘制指令</h3><p>与绝对坐标绘制指令的字母是一样的，只不过全部是小写表示。这组指令的参数中涉及坐标的参数代表的是相对坐标，意思就是参数代表的是从当前点到目标点的偏移量，正数就代表向轴正向偏移，负数代表向反向偏移。不过对Z指令来说，大小写没有区别。<br>绝对坐标指令与相对坐标指令是可以混合使用</p>
+<h3 id="SVG-path绘制注意事项"><a href="#SVG-path绘制注意事项" class="headerlink" title="SVG path绘制注意事项"></a>SVG path绘制注意事项</h3><p>绘制带孔的图形时要注意：外层边的绘制需要是逆时针顺序的，里面的洞的边的顺序必须是顺时针的。只有这样绘制的图形填充效果才会正确。</p>
+<p>ps:这篇我是抄别人的，只不过我是一点点研究之后才写的，也有一些自己的小心得</p>
+<h2 id="渲染文本"><a href="#渲染文本" class="headerlink" title="渲染文本"></a>渲染文本</h2><p>SVG的强大能力之一是它可以将文本控制到标准HTML页面不可能有的程度，而无须求助图像或其它插件。任何可以在形状或路径上执行的操作（如绘制或滤镜）都可以在文本上执行。尽管SVG的文本渲染如此强大，但是还是有一个不足之处：SVG不能执行自动换行。如果文本比允许空间长，则简单地将它切断。多数情况下，创建多行文本需要多个文本元素。<br>　　此外，可以使用 tspan 元素可以将文本元素分成几部分，允许每部分有各自的样式。还有，在text元素中，空格的处理与HTML类似：换行和回车变成空格，而多个空格压缩成单个空格。</p>
+<h3 id="直接显示在图片中的文本-text元素"><a href="#直接显示在图片中的文本-text元素" class="headerlink" title="直接显示在图片中的文本 - text元素"></a>直接显示在图片中的文本 - text元素</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">width</span>=<span class="string">"300"</span> <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">fill</span>=<span class="string">"red"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"150"</span> <span class="attr">cy</span>=<span class="string">"100"</span> <span class="attr">r</span>=<span class="string">"80"</span> <span class="attr">fill</span>=<span class="string">"green"</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"150"</span> <span class="attr">y</span>=<span class="string">"125"</span> <span class="attr">font-size</span>=<span class="string">"60"</span> <span class="attr">text-anchor</span>=<span class="string">"middle"</span> <span class="attr">fill</span>=<span class="string">"white"</span>&gt;</span>SVG<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>text元素由一下属性：</p>
+<ul>
+<li>x,y是文本位置坐标。</li>
+<li>text-anchor是文本显示的方向，其实也就是位置(x,y)处于文本的位置。这个属性有start,middle和end三种值。</li>
+<li>start表示文本位置坐标(x,y)位于文本的开始处，文本从这点开始向右挨个显示。</li>
+<li>middle表示(x,y)位于文本中间处，文本向左右两个方向显示，其实就是居中显示。</li>
+<li>end表示(x,y)点位于文本结尾，文本向左挨个显示。</li>
+</ul>
+<p>　　除了这些属性，下面的这些属性都既可以在CSS中指定，也可以直接在属性中指定:</p>
+<ul>
+<li>fill,stroke：填充和描边颜色。</li>
+<li>font的相关属性：font-family, font-style, font-weight, font-variant, font-stretch, font-size, font-size-adjust, kerning, letter-spacing, word-spacing and text-decoration。</li>
+</ul>
+<h3 id="文本区间-tspan元素"><a href="#文本区间-tspan元素" class="headerlink" title="文本区间 - tspan元素"></a>文本区间 - tspan元素</h3><p>这个元素是text元素的强力补充；它用于渲染一个区间内的文本；它只能出现在text元素或者tspan元素的子元素中。典型的用法就是强调显示部分文本。例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tspan</span> <span class="attr">font-weight</span>=<span class="string">"bold"</span> <span class="attr">fill</span>=<span class="string">"red"</span>&gt;</span>This is bold and red<span class="tag">&lt;/<span class="name">tspan</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>tspan元素有下列的属性可以设置：<br>x,y用于设置包含的文本的绝对坐标值，这个值会覆盖默认的文本位置。这些属性可以包含一系列数字，这些数字会应用到每个对应的单个字符。没有对应设置的字符会紧跟前一个字符。例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"10"</span> <span class="attr">y</span>=<span class="string">"10"</span>&gt;</span>Hello World!</div><div class="line">  <span class="tag">&lt;<span class="name">tspan</span> <span class="attr">x</span>=<span class="string">"100 200 300"</span>  <span class="attr">font-weight</span>=<span class="string">"bold"</span> <span class="attr">fill</span>=<span class="string">"red"</span>&gt;</span>This is bold and red<span class="tag">&lt;/<span class="name">tspan</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>ps:tspan的x，y是不是依据text的位置变化的,然后我还发现text和tspan的y坐标是以文字底来算的如果设置成0就会看不到的</p>
+<p>dx,dy用于设置包含的文本相对于默认的文本位置的偏移量。这些属性同样可以包含一系列数字，每个都会应用到对应的字符。没有对应设置的字符会紧跟前一个字符。你可以把上面的例子中的x换成dx看看效果。</p>
+<p>rotate用于设置字体的旋转角度。这个属性页可以包含一系列数字，应用到每个字符。没有对应设置的字符会使用最后设置的那个数字。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"10"</span> <span class="attr">y</span>=<span class="string">"10"</span>&gt;</span>Hello World!</div><div class="line"> <span class="tag">&lt;<span class="name">tspan</span> <span class="attr">rotate</span>=<span class="string">"10 20 45"</span>  <span class="attr">font-weight</span>=<span class="string">"bold"</span> <span class="attr">fill</span>=<span class="string">"red"</span>&gt;</span>This is bold and red<span class="tag">&lt;/<span class="name">tspan</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>textLength：这是个属性对text起作用对tspan不起作用，他不是指文字个数，他是指text里有多少文字都会在这个范围内显示，也就是你设置成了1他会压缩显示里面的文字，感觉挺二b的</p>
+<h3 id="文本引用-tref元素"><a href="#文本引用-tref元素" class="headerlink" title="文本引用 - tref元素"></a>文本引用 - tref元素</h3><p>这个元素允许引用定义过的文本，并高效的拷贝到当前位置，通常配合xlink:href指定目的元素。因为是拷贝过来的，所以使用css修改当前文本的时候，不会修改原来的文本。ps：我在做实验的时候这个功能不知道要应用到什么场景，也不知道用了这个发生了什么，求大神解释，还是贴出代码把<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"30"</span> <span class="attr">y</span>=<span class="string">"10"</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span>This is an example text.<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"30"</span> <span class="attr">y</span>=<span class="string">"100"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tref</span> <span class="attr">xlink:href</span>=<span class="string">"#example"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="文本路径-textPath元素"><a href="#文本路径-textPath元素" class="headerlink" title="文本路径 - textPath元素"></a>文本路径 - textPath元素</h3><p>效果也很酷，能做出很多的艺术效果,这个让我想起来了word文档的艺术字；这个元素从它的xlink:href属性获取指定的路径并把文本对齐到这个路径上，看例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">path</span> <span class="attr">id</span>=<span class="string">"my_path"</span> <span class="attr">d</span>=<span class="string">"M 20,20 C 40,40 80,40 100,20"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">textPath</span> <span class="attr">xlink:href</span>=<span class="string">"#my_path"</span>&gt;</span>This text follows a curve.<span class="tag">&lt;/<span class="name">textPath</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>ps:这个例子中是用路径弄了个弧线，然后让字按照弧线排列，然我我发现弧线的长度是有限的，文字太多就会不完全显示，所以对弧线两端做一些处理或者是改变字体大小</p>
+<h2 id="渲染图片-image元素"><a href="#渲染图片-image元素" class="headerlink" title="渲染图片 - image元素"></a>渲染图片 - image元素</h2><p>SVG中的image元素可以直接支持显示光栅图片，使用很简单。看下面的例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"5cm"</span> <span class="attr">height</span>=<span class="string">"4cm"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">image</span> <span class="attr">xlink:href</span>=<span class="string">"Penguins.jpg"</span> <span class="attr">x</span>=<span class="string">"0"</span> <span class="attr">y</span>=<span class="string">"0"</span> <span class="attr">height</span>=<span class="string">"50px"</span> <span class="attr">width</span>=<span class="string">"50px"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这里需要注意几点：<br>1.如果没有设置x或y坐标，则默认是0。<br>2.如果没有设置width或height，则默认也是0.<br>3.如果显式的设置width或height为0，则会禁止渲染这幅图片。<br>4.图片的格式支持png,jpeg,jpg,svg等等，所以svg是支持嵌套svg的。<br>5.image与其他元素一样，是svg的常规元素，所以它支持所有的裁剪，蒙板，滤镜，旋转等效果。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/svg/" rel="tag">#svg</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/svg-1/" rel="next" title="html5之图形的未来-svg初识其真容">
+                <i class="fa fa-chevron-left"></i> html5之图形的未来-svg初识其真容
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/svg-3/" rel="prev" title="html5之图形的未来-svg笔画与填充">
+                html5之图形的未来-svg笔画与填充 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="blog/svg-2/"
+     data-title="html5之图形的未来-svg图形绘制、文本与图像"
+     data-content=""
+     data-url="http://azq.space/blog/svg-2/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="blog/svg-2/"
+           data-title="html5之图形的未来-svg图形绘制、文本与图像" data-url="http://azq.space/blog/svg-2/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xif9n.com1.z0.glb.clouddn.com/logo.gif"
+               alt="azq" />
+          <p class="site-author-name" itemprop="name">azq</p>
+          <p class="site-description motion-element" itemprop="description">看我的牙白不白呀，嘿嘿嘿...</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/uaio/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/anzhiqing" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-coding"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/azqwill" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/iazq" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本形状"><span class="nav-number">1.</span> <span class="nav-text">基本形状</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩形-rect元素"><span class="nav-number">1.1.</span> <span class="nav-text">矩形 - rect元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#圆-circle元素"><span class="nav-number">1.2.</span> <span class="nav-text">圆 - circle元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#椭圆-ellipse元素"><span class="nav-number">1.3.</span> <span class="nav-text">椭圆 - ellipse元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折线-polyline元素"><span class="nav-number">1.4.</span> <span class="nav-text">折线 - polyline元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多边形-polygon元素"><span class="nav-number">1.5.</span> <span class="nav-text">多边形 - polygon元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路径-path元素"><span class="nav-number">1.6.</span> <span class="nav-text">路径 - path元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对坐标绘制指令"><span class="nav-number">1.7.</span> <span class="nav-text">相对坐标绘制指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG-path绘制注意事项"><span class="nav-number">1.8.</span> <span class="nav-text">SVG path绘制注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染文本"><span class="nav-number">2.</span> <span class="nav-text">渲染文本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接显示在图片中的文本-text元素"><span class="nav-number">2.1.</span> <span class="nav-text">直接显示在图片中的文本 - text元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本区间-tspan元素"><span class="nav-number">2.2.</span> <span class="nav-text">文本区间 - tspan元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本引用-tref元素"><span class="nav-number">2.3.</span> <span class="nav-text">文本引用 - tref元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本路径-textPath元素"><span class="nav-number">2.4.</span> <span class="nav-text">文本路径 - textPath元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染图片-image元素"><span class="nav-number">3.</span> <span class="nav-text">渲染图片 - image元素</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">azq</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"POST-AND-GET"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("lCsovy3CTCC6GKG1SUhMAABf-gzGzoHsz", "1GVQtrKLbXFRwHfk3pBnEnfz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

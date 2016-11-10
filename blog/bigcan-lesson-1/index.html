@@ -1,0 +1,893 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="/css/fonts_googleapis.css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js,适配,html5,css3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="首先我先说两个概念，第一，响应式：一个页面在不同尺寸的浏览器中不同的表现；第二，自适应：一个页面在任何尺寸浏览器下表现一致.这里只说自适应。
+1.简单粗暴型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端适配方法合集">
+<meta property="og:url" content="http://azq.space/blog/bigcan-lesson-1/index.html">
+<meta property="og:site_name" content="安安安志清">
+<meta property="og:description" content="首先我先说两个概念，第一，响应式：一个页面在不同尺寸的浏览器中不同的表现；第二，自适应：一个页面在任何尺寸浏览器下表现一致.这里只说自适应。
+1.简单粗暴型">
+<meta property="og:image" content="http://7xif9n.com1.z0.glb.clouddn.com/bigcan-code.jpg">
+<meta property="og:updated_time" content="2016-11-02T11:36:21.143Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动端适配方法合集">
+<meta name="twitter:description" content="首先我先说两个概念，第一，响应式：一个页面在不同尺寸的浏览器中不同的表现；第二，自适应：一个页面在任何尺寸浏览器下表现一致.这里只说自适应。
+1.简单粗暴型">
+<meta name="twitter:image" content="http://7xif9n.com1.z0.glb.clouddn.com/bigcan-code.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '8820454',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://azq.space/blog/bigcan-lesson-1/"/>
+
+
+  <title> 移动端适配方法合集 | 安安安志清 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2f842a6d2280c26b5d7bc63d6cb4374e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">安安安志清</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一个大前端初学者的艰难学习之路</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                移动端适配方法合集
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-14T14:44:00+08:00" content="2016-08-14">
+              2016-08-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/BigCan/" itemprop="url" rel="index">
+                    <span itemprop="name">BigCan</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/bigcan-lesson-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/bigcan-lesson-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/bigcan-lesson-1/" class="leancloud_visitors" data-flag-title="移动端适配方法合集">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>首先我先说两个概念，第一，响应式：一个页面在不同尺寸的浏览器中不同的表现；第二，自适应：一个页面在任何尺寸浏览器下表现一致.这里只说自适应。</p>
+<h4 id="1-简单粗暴型"><a href="#1-简单粗暴型" class="headerlink" title="1.简单粗暴型"></a>1.简单粗暴型</h4><a id="more"></a>
+<p><strong>zoom</strong>方式：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</span><span class="comment">&lt;!--必须,放在head标签中--&gt;</span>   </div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    var _SCALE_ = 1;</div><div class="line">    _SCALE_ = function ()&#123;</div><div class="line">    var deviceWidth = document.documentElement.clientWidth,</div><div class="line">    scale = deviceWidth / 640;</div><div class="line">    scale = scale &gt; 1 ? 1 : scale;</div><div class="line">    document.body.style.zoom = scale;</div><div class="line">    return scale;//留着给js用</div><div class="line">&#125;();//在body下执行即可</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>以上是通过css属性zoom来缩放页面，设计稿宽度为640(以下设计稿尺寸都为640)，所以这样的好处就是直接按照原来设计稿的尺寸用px来写css，不过这个显然不够高大上，页面有时会不清晰，但是通过和%的配合也可以快速的构建你的h5页面</p>
+<p><strong>css3的scale</strong>方式：</p>
+<p>此方式bug众多，不适合新手，也不适合老司机，所以 略略略</p>
+<h4 id="2-温柔小巧型"><a href="#2-温柔小巧型" class="headerlink" title="2.温柔小巧型"></a>2.温柔小巧型</h4><p><strong>meta-viewport-scale</strong>方式：</p>
+<p>通过比例来对initial-scale等属性进行重置，少部分浏览器不识别重置</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</span><span class="comment">&lt;!--必须,放在head标签中--&gt;</span>   </div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">var _SCALE_ = 1;</div><div class="line">    _SCALE_ = function ()&#123;</div><div class="line">    var deviceWidth = document.documentElement.clientWidth,</div><div class="line">    scale = deviceWidth / 640;</div><div class="line">    scale = scale &gt; 1 ? 1 : scale;</div><div class="line">    var metaEl = document.querySelector('meta[name="viewport"]');</div><div class="line">    metaEl.setAttribute('content', 'width=640,initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');</div><div class="line">    return scale;</div><div class="line">&#125;();</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这种方式和zoom的方式类似也是采用缩放，css也是按照原始设计稿来写,也能解决1px的问题，暂时没有发现什么问题,也许会有不清晰的现象,如果有同学在使用这种方法的时候遇到问题请及时告诉我,赶紧填坑</p>
+<h4 id="3-高端时尚型"><a href="#3-高端时尚型" class="headerlink" title="3.高端时尚型"></a>3.高端时尚型</h4><p>这是个高清适配的方法,除了重置meta失效的浏览器</p>
+<p><strong>dpr，rem，meta</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dpr, rem, scale;</div><div class="line">        <span class="keyword">var</span> docEl = <span class="built_in">document</span>.documentElement;</div><div class="line">        <span class="keyword">var</span> fontEl = <span class="built_in">document</span>.createElement(<span class="string">'style'</span>);</div><div class="line">        <span class="keyword">var</span> metaEl = <span class="built_in">document</span>.querySelector(<span class="string">'meta[name="viewport"]'</span>);</div><div class="line"></div><div class="line">        dpr = <span class="built_in">window</span>.devicePixelRatio || <span class="number">1</span>;</div><div class="line">        rem = docEl.clientWidth * dpr / <span class="number">10</span>;</div><div class="line">        scale = <span class="number">1</span> / dpr;</div><div class="line">        <span class="comment">// 设置viewport，进行缩放，达到高清效果</span></div><div class="line">        metaEl.setAttribute(<span class="string">'content'</span>, <span class="string">'width='</span> + dpr * docEl.clientWidth + <span class="string">',initial-scale='</span> + scale + <span class="string">',maximum-scale='</span> + scale + <span class="string">', minimum-scale='</span> + scale + <span class="string">',user-scalable=no'</span>);</div><div class="line"></div><div class="line">        <span class="comment">// 设置data-dpr属性，留作的css hack之用</span></div><div class="line">        docEl.setAttribute(<span class="string">'data-dpr'</span>, dpr);</div><div class="line"></div><div class="line">        <span class="comment">// 动态写入样式</span></div><div class="line">        docEl.firstElementChild.appendChild(fontEl);</div><div class="line">        fontEl.innerHTML = <span class="string">'html&#123;font-size:'</span> + rem + <span class="string">'px!important;&#125;'</span>;</div><div class="line"></div><div class="line">        <span class="comment">// 给js调用的，某一dpr下rem和px之间的转换函数</span></div><div class="line">        <span class="built_in">window</span>.rem2px = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">            v = <span class="built_in">parseFloat</span>(v);</div><div class="line">            <span class="keyword">return</span> v * rem;</div><div class="line">        &#125;;</div><div class="line">        <span class="built_in">window</span>.px2rem = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">            v = <span class="built_in">parseFloat</span>(v);</div><div class="line">            <span class="keyword">return</span> v / rem;</div><div class="line">        &#125;;</div><div class="line">        <span class="built_in">window</span>.dpr = dpr;</div><div class="line">        <span class="built_in">window</span>.rem = rem;</div></pre></td></tr></table></figure>
+<p>然后为了方便我们可以采用less或者sass、scss来对我们的css样式进行管理，这里简单的介绍less<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.px2rem</span>(<span class="variable">@name</span>, <span class="variable">@px</span>)&#123;</div><div class="line">    <span class="attribute">@&#123;name&#125;</span>: <span class="variable">@px</span> / <span class="number">64</span> * <span class="number">1rem</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.px2px</span>(<span class="variable">@name</span>, <span class="variable">@px</span>)&#123;</div><div class="line">    <span class="attribute">@&#123;name&#125;</span>: round(<span class="variable">@px</span> / <span class="number">2</span>) * <span class="number">1px</span>;</div><div class="line">  <span class="selector-attr">[data-dpr="2"]</span> <span class="selector-tag">&amp;</span> &#123;</div><div class="line">      <span class="attribute">@&#123;name&#125;</span>: <span class="variable">@px</span> * <span class="number">1px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// for mx3</span></div><div class="line">  <span class="selector-attr">[data-dpr="2.5"]</span> <span class="selector-tag">&amp;</span> &#123;</div><div class="line">      <span class="attribute">@&#123;name&#125;</span>: round(<span class="variable">@px</span> * <span class="number">2.5</span> / <span class="number">2</span>) * <span class="number">1px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// for 小米note</span></div><div class="line">  <span class="selector-attr">[data-dpr="2.75"]</span> <span class="selector-tag">&amp;</span> &#123;</div><div class="line">      <span class="attribute">@&#123;name&#125;</span>: round(<span class="variable">@px</span> * <span class="number">2.75</span> / <span class="number">2</span>) * <span class="number">1px</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-attr">[data-dpr="3"]</span> <span class="selector-tag">&amp;</span> &#123;</div><div class="line">      <span class="attribute">@&#123;name&#125;</span>: round(<span class="variable">@px</span> / <span class="number">2</span> * <span class="number">3</span>) * <span class="number">1px</span></div><div class="line">  &#125;</div><div class="line">  <span class="comment">// for 三星note4</span></div><div class="line">  <span class="selector-attr">[data-dpr="4"]</span> <span class="selector-tag">&amp;</span> &#123;</div><div class="line">      <span class="attribute">@&#123;name&#125;</span>: <span class="variable">@px</span> * <span class="number">2px</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*简单的圆角半径*/</span></div><div class="line"><span class="selector-class">.border-radius</span> (<span class="variable">@radius</span>: <span class="number">5px</span>) &#123;</div><div class="line">  <span class="attribute">-webkit-border-radius</span>: <span class="variable">@radius</span>;</div><div class="line">  <span class="attribute">-moz-border-radius</span>: <span class="variable">@radius</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="variable">@radius</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*四角的半径定制*/</span></div><div class="line"><span class="selector-class">.border-radius-custom</span> (<span class="variable">@topleft</span>: <span class="number">5px</span>, <span class="variable">@topright</span>: <span class="number">5px</span>, <span class="variable">@bottomleft</span>: <span class="number">5px</span>, <span class="variable">@bottomright</span>: <span class="number">5px</span>) &#123;</div><div class="line">  <span class="attribute">-webkit-border-radius</span>: <span class="variable">@topleft</span> <span class="variable">@topright</span> <span class="variable">@bottomright</span> <span class="variable">@bottomleft</span>;</div><div class="line">  <span class="attribute">-moz-border-radius</span>: <span class="variable">@topleft</span> <span class="variable">@topright</span> <span class="variable">@bottomright</span> <span class="variable">@bottomleft</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="variable">@topleft</span> <span class="variable">@topright</span> <span class="variable">@bottomright</span> <span class="variable">@bottomleft</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*方块阴影 Box Shadow*/</span></div><div class="line"><span class="selector-class">.box-shadow</span> (<span class="variable">@x</span>: <span class="number">0px</span>, <span class="variable">@y</span>: <span class="number">3px</span>, <span class="variable">@blur</span>: <span class="number">5px</span>, <span class="variable">@alpha</span>: <span class="number">0.5</span>) &#123;</div><div class="line">  <span class="attribute">-webkit-box-shadow</span>: <span class="variable">@x</span> <span class="variable">@y</span> <span class="variable">@blur</span> rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="variable">@alpha</span>);</div><div class="line">  <span class="attribute">-moz-box-shadow</span>: <span class="variable">@x</span> <span class="variable">@y</span> <span class="variable">@blur</span> rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="variable">@alpha</span>);</div><div class="line">  <span class="attribute">box-shadow</span>: <span class="variable">@x</span> <span class="variable">@y</span> <span class="variable">@blur</span> rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="variable">@alpha</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">/*元素过渡效果 Transition*/</span></div><div class="line"><span class="selector-class">.transition</span> (<span class="variable">@prop</span>: all, <span class="variable">@time</span>: <span class="number">1s</span>, <span class="variable">@ease</span>: linear) &#123;</div><div class="line">  <span class="attribute">-webkit-transition</span>: <span class="variable">@prop</span> <span class="variable">@time</span> <span class="variable">@ease</span>;</div><div class="line">  <span class="attribute">-moz-transition</span>: <span class="variable">@prop</span> <span class="variable">@time</span> <span class="variable">@ease</span>;</div><div class="line">  <span class="attribute">-ms-transition</span>: <span class="variable">@prop</span> <span class="variable">@time</span> <span class="variable">@ease</span>;</div><div class="line">  <span class="attribute">transition</span>: <span class="variable">@prop</span> <span class="variable">@time</span> <span class="variable">@ease</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*转换/旋转 Transform*/</span></div><div class="line"><span class="selector-class">.transform</span> (<span class="variable">@rotate</span>: <span class="number">90deg</span>, <span class="variable">@scale</span>: <span class="number">1</span>, <span class="variable">@skew</span>: <span class="number">1deg</span>, <span class="variable">@translate</span>: <span class="number">10px</span>) &#123;</div><div class="line">  <span class="attribute">-webkit-transform</span>: rotate(<span class="variable">@rotate</span>) scale(<span class="variable">@scale</span>) skew(<span class="variable">@skew</span>) translate(<span class="variable">@translate</span>);</div><div class="line">  <span class="attribute">-moz-transform</span>: rotate(<span class="variable">@rotate</span>) scale(<span class="variable">@scale</span>) skew(<span class="variable">@skew</span>) translate(<span class="variable">@translate</span>);</div><div class="line">  <span class="attribute">-ms-transform</span>: rotate(<span class="variable">@rotate</span>) scale(<span class="variable">@scale</span>) skew(<span class="variable">@skew</span>) translate(<span class="variable">@translate</span>);</div><div class="line">  <span class="attribute">transform</span>: rotate(<span class="variable">@rotate</span>) scale(<span class="variable">@scale</span>) skew(<span class="variable">@skew</span>) translate(<span class="variable">@translate</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">/*线性渐变*/</span></div><div class="line"><span class="selector-class">.gradient</span> (<span class="variable">@origin</span>: left, <span class="variable">@start</span>: <span class="number">#ffffff</span>, <span class="variable">@stop</span>: <span class="number">#000000</span>) &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="variable">@start</span>;</div><div class="line">  <span class="attribute">background-image</span>: -webkit-linear-gradient(<span class="variable">@origin</span>, <span class="variable">@start</span>, <span class="variable">@stop</span>);</div><div class="line">  <span class="attribute">background-image</span>: -moz-linear-gradient(<span class="variable">@origin</span>, <span class="variable">@start</span>, <span class="variable">@stop</span>);</div><div class="line">  <span class="attribute">background-image</span>: -ms-linear-gradient(<span class="variable">@origin</span>, <span class="variable">@start</span>, <span class="variable">@stop</span>);</div><div class="line">  <span class="attribute">background-image</span>: linear-gradient(<span class="variable">@origin</span>, <span class="variable">@start</span>, <span class="variable">@stop</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">/*快速渐变*/</span></div><div class="line"><span class="selector-class">.quick-gradient</span> (<span class="variable">@origin</span>: left, <span class="variable">@alpha</span>: <span class="number">0.2</span>) &#123;</div><div class="line">  <span class="attribute">background-image</span>: -webkit-linear-gradient(<span class="variable">@origin</span>, rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.0</span>), rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="variable">@alpha</span>));</div><div class="line">  <span class="attribute">background-image</span>: -moz-linear-gradient(<span class="variable">@origin</span>, rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.0</span>), rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="variable">@alpha</span>));</div><div class="line">  <span class="attribute">background-image</span>: -ms-linear-gradient(<span class="variable">@origin</span>, rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.0</span>), rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="variable">@alpha</span>));</div><div class="line">  <span class="attribute">background-image</span>: linear-gradient(<span class="variable">@origin</span>, rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.0</span>), rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="variable">@alpha</span>));</div><div class="line">&#125;</div><div class="line"><span class="comment">/*镜像效果*/</span></div><div class="line"><span class="selector-class">.reflect</span> (<span class="variable">@length</span>: <span class="number">50%</span>, <span class="variable">@opacity</span>: <span class="number">0.2</span>)&#123;</div><div class="line">  <span class="attribute">-webkit-box-reflect</span>: below <span class="number">0px</span></div><div class="line">  -webkit-gradient(linear, left top, left bottom, from(transparent),</div><div class="line">          color-stop(<span class="variable">@length</span>, transparent), to(rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="variable">@opacity</span>)));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里写了一些css3的效果备用</p>
+<p>less是不被浏览器识别的所以我们要编译它，一种是用在线的js编译，这种要多加载一条js；建议用程序来编译less，例如使用npm包中的<a href="https://www.npmjs.com/package/less" target="_blank" rel="external">less</a>来编译;或者用构建工具<code>gulp</code>或者包管理工具<code>webpack</code>来编译，有时间可以分享给大家我的几个项目的源码;再或者在css中直接写px然后利用npm包中的<code>px2rem</code>来直接编译成rem,然后引用编译好的即可;其实上面的less中的前缀是可以省略的，然后用npm包中的<code>autoprefixer</code>来自动生成即可</p>
+<p>这个适配方法对于<a href="http://www.swiper.com.cn/" target="_blank" rel="external">Swiper</a>滑动组件有点麻烦<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mySwiper = <span class="keyword">new</span> Swiper(<span class="string">'.swiper-container'</span>, &#123;</div><div class="line">        <span class="attr">height</span> : <span class="built_in">window</span>.innerHeight,<span class="comment">//这里需要给一个高度</span></div><div class="line">        direction : <span class="string">'vertical'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>请大家踩坑</p>
+<h4 id="4-css型"><a href="#4-css型" class="headerlink" title="4.css型"></a>4.css型</h4><p><strong>%</strong><br>这个就不多说了，就是需要计算和设计稿宽度的比和高度比，注意的是：padding，margin的百分比计算是根据宽度的，这点要很注意<br><strong>vw&amp;vh</strong><br>这个是忘记了是css3新出来的还是以前就有了，这个类似%，但是他的父级是屏幕，即vw对应屏幕宽度，vh对应高度，整个屏幕的大小是100vw*100vh</p>
+<h4 id="5-自由发挥型"><a href="#5-自由发挥型" class="headerlink" title="5.自由发挥型"></a>5.自由发挥型</h4><p>下面说一个我最常用的方式：<br><strong>rem，vw&amp;vh，%,flex</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dpr, rem, scale;</div><div class="line">   <span class="keyword">var</span> docEl = <span class="built_in">document</span>.documentElement;</div><div class="line">   <span class="keyword">var</span> fontEl = <span class="built_in">document</span>.createElement(<span class="string">'style'</span>);</div><div class="line">   scale = docEl.clientWidth / <span class="number">640</span>;</div><div class="line">   scale = scale&gt;<span class="number">1</span>?<span class="number">1</span>:scale;</div><div class="line">   rem = <span class="number">64</span>;</div><div class="line">   rem = rem*scale;</div><div class="line">   <span class="comment">// 动态写入样式</span></div><div class="line">   docEl.firstElementChild.appendChild(fontEl);</div><div class="line">   fontEl.innerHTML = <span class="string">'html,body&#123;font-size:'</span> + rem + <span class="string">'px!important;&#125;'</span>;</div></pre></td></tr></table></figure>
+<p>动态的设置根的字体大小</p>
+<p>css中rem的处理方式还是同第三种的解决方式</p>
+<p>这种方法兼容性比较好，移动端基本都ok了;有的时候设计出来的设计稿可能，略微的长一些，这时候我们在布局上就要用上%和vh,flex,图片要设置高度宽自动,这种方法真的要随机应变了，但是这种方法也是对于观看者最友好的，能最大程度的不因可视区域的变小而影响观看</p>
+<p>以上是我用过的，踩过坑的方法，还有其他方法请一起踩坑哦<br>以上有什么代码、概念之类的错误请及时批斗，也欢迎批斗</p>
+<p>不知道以上对大家有没有帮助，没有的话我也写了这篇文章了；有的话那我就心满意足了<br>公众号</p>
+<p><img src="http://7xif9n.com1.z0.glb.clouddn.com/bigcan-code.jpg" alt="BigCan"></p>
+<p><a href="http://bigcan.win" target="_blank" rel="external">我们的主页</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/适配/" rel="tag">#适配</a>
+          
+            <a href="/tags/html5/" rel="tag">#html5</a>
+          
+            <a href="/tags/css3/" rel="tag">#css3</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/prevent-iframe/" rel="next" title="防止被嵌套iframe">
+                <i class="fa fa-chevron-left"></i> 防止被嵌套iframe
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/wx/" rel="prev" title="微信小程序web开发者工具0.9版本和破解方法以及demo">
+                微信小程序web开发者工具0.9版本和破解方法以及demo <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="blog/bigcan-lesson-1/"
+     data-title="移动端适配方法合集"
+     data-content=""
+     data-url="http://azq.space/blog/bigcan-lesson-1/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="blog/bigcan-lesson-1/"
+           data-title="移动端适配方法合集" data-url="http://azq.space/blog/bigcan-lesson-1/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xif9n.com1.z0.glb.clouddn.com/logo.gif"
+               alt="azq" />
+          <p class="site-author-name" itemprop="name">azq</p>
+          <p class="site-description motion-element" itemprop="description">看我的牙白不白呀，嘿嘿嘿...</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/uaio/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/anzhiqing" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-coding"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/azqwill" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/iazq" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-简单粗暴型"><span class="nav-number">1.</span> <span class="nav-text">1.简单粗暴型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-温柔小巧型"><span class="nav-number">2.</span> <span class="nav-text">2.温柔小巧型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-高端时尚型"><span class="nav-number">3.</span> <span class="nav-text">3.高端时尚型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-css型"><span class="nav-number">4.</span> <span class="nav-text">4.css型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-自由发挥型"><span class="nav-number">5.</span> <span class="nav-text">5.自由发挥型</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">azq</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"POST-AND-GET"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("lCsovy3CTCC6GKG1SUhMAABf-gzGzoHsz", "1GVQtrKLbXFRwHfk3pBnEnfz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>

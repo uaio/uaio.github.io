@@ -1,0 +1,964 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="/css/fonts_googleapis.css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="工具," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="再一次写关于sublime 神器的相关配置，这次会比较完善
+
+安装sublime text 3a) 按住Ctrl键 点击 sublime text 首页
+b) 
+c) Windows 64 bit - also available as a portable version  64位便携版 ps:下载可能需要翻墙;安装到u盘或者初c盘其他的位置，因为这个我们可以随时拷贝走或者同步云亦或者托管代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sublime text 3 破解 安装插件 设置">
+<meta property="og:url" content="http://azq.space/blog/sublime/index.html">
+<meta property="og:site_name" content="安安安志清">
+<meta property="og:description" content="再一次写关于sublime 神器的相关配置，这次会比较完善
+
+安装sublime text 3a) 按住Ctrl键 点击 sublime text 首页
+b) 
+c) Windows 64 bit - also available as a portable version  64位便携版 ps:下载可能需要翻墙;安装到u盘或者初c盘其他的位置，因为这个我们可以随时拷贝走或者同步云亦或者托管代码">
+<meta property="og:image" content="http://7xif9n.com1.z0.glb.clouddn.com/NY9%5BXR2P_37_4U5W%25%7B3UKQ7.png">
+<meta property="og:updated_time" content="2016-10-10T14:08:44.239Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sublime text 3 破解 安装插件 设置">
+<meta name="twitter:description" content="再一次写关于sublime 神器的相关配置，这次会比较完善
+
+安装sublime text 3a) 按住Ctrl键 点击 sublime text 首页
+b) 
+c) Windows 64 bit - also available as a portable version  64位便携版 ps:下载可能需要翻墙;安装到u盘或者初c盘其他的位置，因为这个我们可以随时拷贝走或者同步云亦或者托管代码">
+<meta name="twitter:image" content="http://7xif9n.com1.z0.glb.clouddn.com/NY9%5BXR2P_37_4U5W%25%7B3UKQ7.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '8820454',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://azq.space/blog/sublime/"/>
+
+
+  <title> sublime text 3 破解 安装插件 设置 | 安安安志清 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2f842a6d2280c26b5d7bc63d6cb4374e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">安安安志清</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一个大前端初学者的艰难学习之路</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                sublime text 3 破解 安装插件 设置
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-09T09:48:00+08:00" content="2016-10-09">
+              2016-10-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tools/" itemprop="url" rel="index">
+                    <span itemprop="name">tools</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/sublime/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/sublime/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/sublime/" class="leancloud_visitors" data-flag-title="sublime text 3 破解 安装插件 设置">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>再一次写关于sublime 神器的相关配置，这次会比较完善</p>
+</blockquote>
+<h4 id="安装sublime-text-3"><a href="#安装sublime-text-3" class="headerlink" title="安装sublime text 3"></a>安装sublime text 3</h4><p>a) 按住Ctrl键 点击 <a href="http://www.sublimetext.com/" target="_blank" rel="external">sublime text 首页</a></p>
+<p>b) <img src="http://7xif9n.com1.z0.glb.clouddn.com/NY9%5BXR2P_37_4U5W%25%7B3UKQ7.png" alt="下载位置"></p>
+<p>c) Windows 64 bit - also available as a portable version  64位便携版 ps:下载可能需要翻墙;安装到u盘或者初c盘其他的位置，因为这个我们可以随时拷贝走或者同步云亦或者托管代码仓库</p>
+<a id="more"></a>
+<h4 id="更改插件包安装位置"><a href="#更改插件包安装位置" class="headerlink" title="更改插件包安装位置"></a>更改插件包安装位置</h4><p>a) 打开sublime 找到 Preferences-&gt;Browse Packages…… 打开默认安装包位置<br>b) 向上一直找到sublime text 3的文件夹，关闭sublime，删除 sublime text 3文件夹<br>c) 回到sublime安装路径，在根目录新建Data文件夹<br>d) 打开sublime 这时安装插件的路径就自动更改到的Data中</p>
+<h4 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h4><p>a) 按住Ctrl键 点击 <a href="http://sublimetext.iaixue.com/forum.php?mod=viewthread&amp;tid=342&amp;extra=&amp;page=1" target="_blank" rel="external">汉化插件</a><br>ps:需要注册一下回复才能看到下载地址<br>b) 将下载的插件 放到Data\Installed Packages里 重启sublime<br>c) Preferences-&gt;Languages 下选择简体中文</p>
+<h4 id="授权码"><a href="#授权码" class="headerlink" title="授权码"></a>授权码</h4><p>a) 帮助的输入授权码<br>b)<br>        —– BEGIN LICENSE —–<br>    Michael Barnes<br>    Single User License<br>    EA7E-821385<br>    8A353C41 872A0D5C DF9B2950 AFF6F667<br>    C458EA6D 8EA3C286 98D1D650 131A97AB<br>    AA919AEC EF20E143 B361B1E7 4C8B7F04<br>    B085E65E 2F5F5360 8489D422 FB8FC1AA<br>    93F6323C FD7F7544 3F39C318 D95E6480<br>    FCCC7561 8A4A1741 68FA4223 ADCEDE07<br>    200C25BE DBBC4855 C4CFB774 C5EC138C<br>    0FEC1CEF D9DCECEC D3A5DAD1 01316C36<br>    —— END LICENSE ——</p>
+<p>可能会过期或者失效，可以去网上搜，有很多</p>
+<h4 id="安装-Package-Control"><a href="#安装-Package-Control" class="headerlink" title="安装 Package Control"></a>安装 Package Control</h4><p>a) Ctrl+Shift+p 然后输入install 会出现Install Package Control 不过这个貌似还得翻墙<br>b) 按住Ctrl键 点击 <a href="https://packagecontrol.io/installation" target="_blank" rel="external">packagecontrol</a>有安装说明，不过还得翻墙，这个网址有病<br>c) 直接下载包 网上搜索一下，Package Control.sublime-package 然后放到Data\Installed Packages里 重启sublime 同样在设置里会看到</p>
+<h4 id="如何利用Package-Control安装插件"><a href="#如何利用Package-Control安装插件" class="headerlink" title="如何利用Package Control安装插件"></a>如何利用Package Control安装插件</h4><p> a) 设置-&gt; Package Control  or  Ctrl+Shift+p找到Package Control install 这时他会去加载可以安装的插件<br> b) 常用插件:</p>
+<ul>
+<li>Emmet: 可以使HTML/CSS编码速度提升，快速生成html,css</li>
+<li>SublimeCodeIntel: 代码补全和提示</li>
+<li>JavaScript Completions: js提示加强了,为了避免和SublimeCodeIntel插件的js提示冲突，所以设置SublimeCodeIntel的codeintel_enabled_languages属性，其中去除javascript这个，这个要在user中设置，不要修改默认的，保存重启</li>
+<li>AutoFileName: 文件路径自动提示</li>
+<li>javascriptNext: es6语法支持</li>
+<li>SideBarEnhancements: 侧边栏增强</li>
+<li>ColorPicker: 调色盘</li>
+<li>ConvertToUTF8: 支持 GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS 等编码的插件</li>
+<li>AdvanceNewFile: 创建新文件插件 快捷键：Ctrl+Alt+n</li>
+</ul>
+<h4 id="默认的快捷键"><a href="#默认的快捷键" class="headerlink" title="默认的快捷键"></a>默认的快捷键</h4><p>a) 选择类</p>
+<ul>
+<li>Ctrl+D ：选中光标所占的文本，继续操作则会选中下一个相同的文本。</li>
+<li>Alt+F3：选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中并更改所有相同的变量名、函数名等。</li>
+<li>Ctrl+L：选中整行，继续操作则继续选择下一行，效果和 Shift+↓ 效果一样</li>
+<li>Ctrl+Shift+L ：先选中多行，再按下快捷键，会在每行行尾插入光标，即可同时编辑这些行。</li>
+<li>Ctrl+Shift+M：选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。</li>
+<li>Ctrl+M：光标移动至括号内结束或开始的位置。</li>
+<li>Ctrl+Enter：在下一行插入新行。举个例子：即使光标不在行尾，也能快速向下插入一行。</li>
+<li>Ctrl+Shift+Enter： 在上一行插入新行。举个栗子：即使光标不在行首，也能快速向上插入一行。</li>
+<li>Ctrl+Shift+[ ：选中代码，按下快捷键，折叠代码。</li>
+<li>Ctrl+Shift+] ：选中代码，按下快捷键，展开代码。</li>
+<li>Ctrl+K+0 ：展开所有折叠代码。</li>
+<li>Ctrl+← ：向左单位性地移动光标，快速移动光标。</li>
+<li>Ctrl+→ ：向右单位性地移动光标，快速移动光标。</li>
+<li>shift+↑ ：向上选中多行。</li>
+<li>shift+↓ ：向下选中多行。</li>
+<li>Shift+← ：向左选中文本。</li>
+<li>Shift+→： 向右选中文本。</li>
+<li>Ctrl+Shift+←：向左单位性地选中文本。</li>
+<li>Ctrl+Shift+→：向右单位性地选中文本。</li>
+<li>Ctrl+Shift+↑：将光标所在行和上一行代码互换（将光标所在行插入到上一行之前）。</li>
+<li>Ctrl+Shift+↓：将光标所在行和下一行代码互换（将光标所在行插入到下一行之后）。</li>
+<li>Ctrl+Alt+↑：向上添加多行光标，可同时编辑多行。</li>
+<li>Ctrl+Alt+↓：向下添加多行光标，可同时编辑多行。</li>
+</ul>
+<p>b) 编辑类</p>
+<ul>
+<li>Ctrl+J：合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。</li>
+<li>Ctrl+Shift+D：复制光标所在整行，插入到下一行。</li>
+<li>Tab：向右缩进。</li>
+<li>Shift+Tab：向左缩进。</li>
+<li>Ctrl+K+K：从光标处开始删除代码至行尾。</li>
+<li>Ctrl+Shift+K：删除整行。</li>
+<li>Ctrl+/：注释单行。</li>
+<li>Ctrl+Shift+/ ：注释多行。</li>
+<li>Ctrl+K+U：转换大写。</li>
+<li>Ctrl+K+L：转换小写。</li>
+<li>Ctrl+Z：撤销。</li>
+<li>Ctrl+Y：恢复撤销。</li>
+<li>Ctrl+U：软撤销，感觉和 Gtrl+Z 一样。</li>
+<li>Ctrl+F2：设置书签</li>
+<li>Ctrl+T：左右字母互换。</li>
+<li>F6： 单词检测拼写</li>
+</ul>
+<p>c) 搜索类</p>
+<ul>
+<li>Ctrl+F：打开底部搜索框，查找关键字。</li>
+<li>Ctrl+shift+F：在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找，略高端，未研究。</li>
+<li>Ctrl+P：打开搜索框。举个栗子：<br>1、输入当前项目中的文件名，快速搜索文件，2、输入@和关键字，查找文件中函数名，3、输入：和数字，跳转到文件中该行代码，4、输入#和关键字，查找变量名。</li>
+<li>Ctrl+G：打开搜索框，自动带：，输入数字跳转到该行代码。举个栗子：在页面代码比较长的文件中快速定位。</li>
+<li>Ctrl+R： 打开搜索框，自动带@，输入关键字，查找文件中的函数名。举个栗子：在函数较多的页面快速查找某个函数。</li>
+<li>(Ctrl+：) 打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。</li>
+<li>Ctrl+Shift+P：打开命令框。场景栗子：打开命名框，输入关键字，调用sublime text或插件的功能，例如使用package安装插件。</li>
+<li>Esc： 退出光标多行选择，退出搜索框，命令框等</li>
+</ul>
+<p>d) 显示类</p>
+<ul>
+<li>Ctrl+Tab：按文件浏览过的顺序，切换当前窗口的标签页。</li>
+<li>Ctrl+PageDown：向左切换当前窗口的标签页。</li>
+<li>Ctrl+PageUp： 向右切换当前窗口的标签页。</li>
+<li>Alt+Shift+1： 窗口分屏，恢复默认1屏（非小键盘的数字）</li>
+<li>Alt+Shift+2： 左右分屏-2列</li>
+<li>Alt+Shift+3： 左右分屏-3列</li>
+<li>Alt+Shift+4： 左右分屏-4列</li>
+<li>Alt+Shift+5： 等分4屏</li>
+<li>Alt+Shift+8： 垂直分屏-2屏</li>
+<li>Alt+Shift+9： 垂直分屏-3屏</li>
+<li>Ctrl+K+B： 开启/关闭侧边栏。</li>
+<li>F11： 全屏模式</li>
+<li>Shift+F11：免打扰模式</li>
+</ul>
+<p>ps: 如果用不习惯的话可以自己设置，只要不冲突就好了</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/工具/" rel="tag">#工具</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/bigcan-lesson-2/" rel="next" title="移动端页面优化方案">
+                <i class="fa fa-chevron-left"></i> 移动端页面优化方案
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/bigcan-lesson-3/" rel="prev" title="怎么样用白鹭引擎做一个小游戏呢">
+                怎么样用白鹭引擎做一个小游戏呢 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="blog/sublime/"
+     data-title="sublime text 3 破解 安装插件 设置"
+     data-content=""
+     data-url="http://azq.space/blog/sublime/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="blog/sublime/"
+           data-title="sublime text 3 破解 安装插件 设置" data-url="http://azq.space/blog/sublime/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xif9n.com1.z0.glb.clouddn.com/logo.gif"
+               alt="azq" />
+          <p class="site-author-name" itemprop="name">azq</p>
+          <p class="site-description motion-element" itemprop="description">看我的牙白不白呀，嘿嘿嘿...</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/uaio/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://coding.net/u/anzhiqing" target="_blank" title="Coding">
+                  
+                    <i class="fa fa-fw fa-coding"></i>
+                  
+                  Coding
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/azqwill" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/iazq" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-zhihu"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装sublime-text-3"><span class="nav-number">1.</span> <span class="nav-text">安装sublime text 3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更改插件包安装位置"><span class="nav-number">2.</span> <span class="nav-text">更改插件包安装位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#汉化"><span class="nav-number">3.</span> <span class="nav-text">汉化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#授权码"><span class="nav-number">4.</span> <span class="nav-text">授权码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Package-Control"><span class="nav-number">5.</span> <span class="nav-text">安装 Package Control</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何利用Package-Control安装插件"><span class="nav-number">6.</span> <span class="nav-text">如何利用Package Control安装插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认的快捷键"><span class="nav-number">7.</span> <span class="nav-text">默认的快捷键</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">azq</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"POST-AND-GET"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("lCsovy3CTCC6GKG1SUhMAABf-gzGzoHsz", "1GVQtrKLbXFRwHfk3pBnEnfz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
