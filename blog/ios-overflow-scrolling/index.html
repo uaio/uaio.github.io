@@ -10,7 +10,7 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<meta name="baidu-site-verification" content="5aLUllZClD" />
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -89,10 +89,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios局部滚动的bug所引发的思考">
 <meta property="og:url" content="http://azq.space/blog/ios-overflow-scrolling/index.html">
-<meta property="og:site_name" content="安安安志清">
+<meta property="og:site_name" content="AIO">
 <meta property="og:description" content="流畅的不要不要的ios出来的bug让人咬牙切齿。bug产生的环境：局部滚动，外部并没有禁止默认浏览器事件bug：导致局部滑动不流畅严重情况下不能滑动解决方案:1:js禁止外部的浏览器默认事件，停止局部事件冒泡（对于结构简单的页面来说可能适合）2:-webkit-overflow-scrolling:touch给body和局部滚动的元素
 -webkit-overflow-scrolling:touc">
-<meta property="og:updated_time" content="2016-11-10T14:19:18.309Z">
+<meta property="og:updated_time" content="2016-11-22T15:20:45.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios局部滚动的bug所引发的思考">
 <meta name="twitter:description" content="流畅的不要不要的ios出来的bug让人咬牙切齿。bug产生的环境：局部滚动，外部并没有禁止默认浏览器事件bug：导致局部滑动不流畅严重情况下不能滑动解决方案:1:js禁止外部的浏览器默认事件，停止局部事件冒泡（对于结构简单的页面来说可能适合）2:-webkit-overflow-scrolling:touch给body和局部滚动的元素
@@ -120,7 +120,7 @@
   <link rel="canonical" href="http://azq.space/blog/ios-overflow-scrolling/"/>
 
 
-  <title> ios局部滚动的bug所引发的思考 | 安安安志清 </title>
+  <title> ios局部滚动的bug所引发的思考 | AIO </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -161,7 +161,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">安安安志清</span>
+      <span class="site-title">AIO</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -338,6 +338,7 @@
         <p>流畅的不要不要的ios出来的bug让人咬牙切齿。<br>bug产生的环境：局部滚动，外部并没有禁止默认浏览器事件<br>bug：导致局部滑动不流畅严重情况下不能滑动<br>解决方案:<br>1:js禁止外部的浏览器默认事件，停止局部事件冒泡（对于结构简单的页面来说可能适合）<br>2:<code>-webkit-overflow-scrolling:touch</code>给body和局部滚动的元素</p>
 <p><code>-webkit-overflow-scrolling:touch</code> 创建了带有硬件加速的系统级控件</p>
 <p>但是呢，通过从网上的查看这个可能带来其他的bug，用js设置局部滚动的scrollTop的时候会出现空白，解决方案：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">el.WebKitOverflowScrolling = <span class="string">'auto'</span>;</div><div class="line">el.scrollTop = <span class="number">500</span>;</div><div class="line">el.WebKitOverflowScrolling = <span class="string">'touch'</span>;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>说到这里，贴上一些可以解决一些问题的css3的代码吧<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">*&#123;</div><div class="line">webkit-tap-highlight-color:rgba(0,0,0,0);//去掉点击高亮</div><div class="line">-webkit-appearance: none;//消除输入框和按钮的原生外观</div><div class="line">-webkit-user-select: none; //禁止页面文字选择，此属性不继承，一般加在body上规定整个body的文字都不会自动调整</div><div class="line">-webkit-text-size-adjust: none; //禁止文字自动调整大小</div><div class="line">-webkit-touch-callout:none; // 禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加</div><div class="line">pointer-events: none;//禁止长按图片</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>还有fixed的bug，这个在布局上可以调整，规定body,html为100%*100%，position为relative；然后用一个div包括内容并设置position为absolute，overflow-y为auto，将要fixed的元素放到这个div外面设置position为absolute，这样就可以模拟了，但是这里在ios又会出现局部滚动问题，所以回去一开始的解决办法，总结为代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span> &#123;</div><div class="line">	<span class="attribute">position</span>:relative;</div><div class="line">	<span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">	<span class="attribute">height</span>:<span class="number">100%</span>;</div><div class="line">	<span class="attribute">overflow</span>:hidden;</div><div class="line">	<span class="attribute">-webkit-overflow-scrolling</span>:touch</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.content</span> &#123;</div><div class="line">	<span class="attribute">position</span>:absolute;</div><div class="line">	<span class="attribute">left</span>:<span class="number">0</span>;</div><div class="line">	<span class="attribute">top</span>:<span class="number">0</span>;</div><div class="line">	<span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">	<span class="attribute">height</span>:auto;</div><div class="line">	<span class="attribute">overflow</span>:auto;</div><div class="line">	<span class="attribute">-webkit-overflow-scrolling</span>:touch</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.fixed-div</span> &#123;</div><div class="line">	<span class="attribute">position</span>:absolute;</div><div class="line">	<span class="attribute">right</span>:<span class="number">0</span>;</div><div class="line">	<span class="attribute">bottom</span>:<span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
@@ -347,6 +348,17 @@
     <div>
       
         
+<div style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+<p>公众号 infefe</p>
+    <img  src="http://7xif9n.com1.z0.glb.clouddn.com/bigcan-code.jpg" alt="扫一扫" style="width: 200px; max-width: 100%;"/>
+</div>
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+<p>赞助</p>
+    <img id="wechat_subscriber_qcode" src="http://7xif9n.com1.z0.glb.clouddn.com/post.jpg" alt="AIO wechat" style="width: 200px; max-width: 100%;"/>
+    <div></div>
+</div>
+
 
       
     </div>
@@ -377,13 +389,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/parseint/" rel="next" title="从parseInt(0.0000009)说起">
-                <i class="fa fa-chevron-left"></i> 从parseInt(0.0000009)说起
+              <a href="/blog/20161002/" rel="next" title="这几个天面试的感受">
+                <i class="fa fa-chevron-left"></i> 这几个天面试的感受
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/css3-anm-addEventListener/" rel="prev" title="css3动画监听">
+                css3动画监听 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -470,14 +486,14 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7xif9n.com1.z0.glb.clouddn.com/logo.gif"
-               alt="azq" />
-          <p class="site-author-name" itemprop="name">azq</p>
+               alt="AIO" />
+          <p class="site-author-name" itemprop="name">AIO</p>
           <p class="site-description motion-element" itemprop="description">看我的牙白不白呀，嘿嘿嘿...</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -583,7 +599,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">azq</span>
+  <span class="author" itemprop="copyrightHolder">AIO</span>
 </div>
 
 <div class="powered-by">
@@ -729,6 +745,26 @@
   
 
   
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
   
 

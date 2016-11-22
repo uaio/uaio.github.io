@@ -10,7 +10,7 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<meta name="baidu-site-verification" content="5aLUllZClD" />
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端开发,html5,css3,nodejs,js,javascript,less,hexo,自学前端" />
+  <meta name="keywords" content="前端开发,html5,css3,nodejs,js,javascript,less,hexo,自学前端,scss,html,css" />
 
 
 
@@ -86,12 +86,12 @@
 
 <meta name="description" content="看我的牙白不白呀，嘿嘿嘿...">
 <meta property="og:type" content="website">
-<meta property="og:title" content="安安安志清">
+<meta property="og:title" content="AIO">
 <meta property="og:url" content="http://azq.space/page/2/index.html">
-<meta property="og:site_name" content="安安安志清">
+<meta property="og:site_name" content="AIO">
 <meta property="og:description" content="看我的牙白不白呀，嘿嘿嘿...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安安安志清">
+<meta name="twitter:title" content="AIO">
 <meta name="twitter:description" content="看我的牙白不白呀，嘿嘿嘿...">
 
 
@@ -116,7 +116,7 @@
   <link rel="canonical" href="http://azq.space/page/2/"/>
 
 
-  <title> 安安安志清 </title>
+  <title> AIO </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -159,7 +159,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">安安安志清</span>
+      <span class="site-title">AIO</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -237,6 +237,558 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/parseint/" itemprop="url">
+                  从parseInt(0.0000009)说起
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-01T14:44:00+08:00" content="2016-11-01">
+              2016-11-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/parseint/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/parseint/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/parseint/" class="leancloud_visitors" data-flag-title="从parseInt(0.0000009)说起">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近看个很多奇特的js相关的文章，真是涨了见识，对于js基础比较薄弱的我来说简直可以用惊叹来形容，“怎么回会这样”、“我擦，不可能吧”;<br>先说一说这个<code>parseInt(0.0000009)</code>结果吧，是0.000001?,是0？还是原始值?结果是9，是9，是9；不要惊讶，下面我通过概念到举例来说明一下这个‘陷阱’</p>
+<p><code>parseInt(string, radix)</code><br>string    必需。要被解析的字符串。<br>radix     可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。<br>如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。<br>如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。</p>
+<p>举几个栗子:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//以下打印结果均为chrome控制台测试结果</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'123'</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'0123'</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"010"</span>);<span class="comment">//10</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"19"</span>,<span class="number">10</span>);<span class="comment">//19</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"011"</span>,<span class="number">2</span>);<span class="comment">//3</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"011"</span>,<span class="number">2</span>);<span class="comment">//3</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"16"</span>,<span class="number">8</span>);<span class="comment">//14</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"0x11"</span>);<span class="comment">//31</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"1f"</span>,<span class="number">16</span>);<span class="comment">//31</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"9e-7"</span>);<span class="comment">//9</span></div><div class="line"><span class="comment">//可以看到这些都是非常标准的传值</span></div></pre></td></tr></table></figure>
+<p>不标准的举几个栗子:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseInt</span>(<span class="number">123</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">123.123</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">0x11</span>);<span class="comment">//17</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">1</span>f,<span class="number">16</span>);<span class="comment">//SyntaxError</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">0.000009</span>);<span class="comment">//0</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">0.0000009</span>);<span class="comment">//9</span></div><div class="line"><span class="comment">//现在看到我们现在把第一个参数传入number的类型就会有意想不到的结果这到底是为什么呢</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>因为parseInt第一个参数接受的是string的类型，当传入number的时候会通过toString对其转换;<br>对于小于 1e-6 的数值来说，toString 时会自动转换为科学计数法。</p>
+</blockquote>
+<p>这个就能解释为什么<code>parseInt(0.0000009)</code>结果是9了，其实是<code>parseInt(0.0000009)</code> –&gt; <code>parseInt(&#39;9e-7&#39;)</code> –&gt; 9</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/webpack/" itemprop="url">
+                  构建webpack+jquery+es6+reactjs自动化入坑
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-26T14:44:00+08:00" content="2016-10-26">
+              2016-10-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/webpack/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/webpack/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/webpack/" class="leancloud_visitors" data-flag-title="构建webpack+jquery+es6+reactjs自动化入坑">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>自己学习了一阵子webpack终于小有点成果，虽然是查阅了很多东西，也是趟过了很多坑；个人觉得reactjs+es6的项目适合webpack以及多页面的移动端项目;概念的东西我就在这里不赘述了，网上能查阅到很多东西</p>
+</blockquote>
+<h1 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h1><ul>
+<li>根目录<ul>
+<li>app  //源文件</li>
+<li>css</li>
+<li>js</li>
+<li>index.html</li>
+<li>index.js  //入口文件</li>
+<li>package.json  </li>
+<li>webpack.config.js //配置文件</li>
+<li>README.md  //说明文档</li>
+</ul>
+</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/webpack/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/border/" itemprop="url">
+                  原来border还可以这样用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-20T12:44:00+08:00" content="2016-10-20">
+              2016-10-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/border/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/border/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/border/" class="leancloud_visitors" data-flag-title="原来border还可以这样用">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>当你打开非常有尿性的ide或者编辑器，新建一个css文件，然后给一个元素添加属性的时候，输入border，不要动，静静看着他的美</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/border/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/bigcan-lesson-3/" itemprop="url">
+                  怎么样用白鹭引擎做一个小游戏呢
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-10T09:32:00+08:00" content="2016-10-10">
+              2016-10-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/BigCan/" itemprop="url" rel="index">
+                    <span itemprop="name">BigCan</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/bigcan-lesson-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/bigcan-lesson-3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/bigcan-lesson-3/" class="leancloud_visitors" data-flag-title="怎么样用白鹭引擎做一个小游戏呢">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<ul>
+<li>认识白鹭引擎</li>
+<li>工具使用</li>
+<li>demo讲解</li>
+<li>制作自己的游戏</li>
+</ul>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/bigcan-lesson-3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -513,561 +1065,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/wx-study/" itemprop="url">
-                  微信小程序demo讲解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-23T09:48:00+08:00" content="2016-09-23">
-              2016-09-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/微信/" itemprop="url" rel="index">
-                    <span itemprop="name">微信</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/wx-study/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/wx-study/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/wx-study/" class="leancloud_visitors" data-flag-title="微信小程序demo讲解">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>小程序代码需要用MINA这个框架,类似react-native，只是将jsx中关于创建html的东西拿到wxml里</p>
-</blockquote>
-<h3 id="解决开发工具破解版请求数据问题"><a href="#解决开发工具破解版请求数据问题" class="headerlink" title="解决开发工具破解版请求数据问题"></a>解决开发工具破解版请求数据问题</h3><p>修改..\微信web开发者工具0.9\package.nw\app\dist\weapp\appservice\asdebug.js中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">e, o</span>) </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> n = F.projectConfig, t = n.Network, r = <span class="string">"webscoket"</span> === o ? t.WsRequestDomain : t.RequestDomain, a = <span class="number">0</span>; a &lt; r.length; a++)</div><div class="line">            <span class="keyword">if</span> (<span class="number">0</span> === e.indexOf(r[a])) <span class="keyword">return</span> !<span class="number">0</span></div><div class="line">    &#125; <span class="keyword">catch</span> (i) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">console</span>.error(i), !<span class="number">1</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>为</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">e, o</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后就可以在某页面的js中去</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">wx.request(&#123;</div><div class="line">    <span class="attr">url</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">data</span>: &#123;&#125;,</div><div class="line">    <span class="attr">header</span>:&#123;</div><div class="line">      <span class="string">"Content-Type"</span>:<span class="string">"application/json"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> data = res.data;</div><div class="line">      <span class="built_in">console</span>.log(data);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<h3 id="app-json里的各个参数"><a href="#app-json里的各个参数" class="headerlink" title="app.json里的各个参数"></a>app.json里的各个参数</h3><p><code>pages</code> ：页面路径，不需要写后缀，因为他会自动寻找到</p>
-<p><code>window</code> ：设置窗口，里面还有一些属性，字面上很容易理解，这里不多说</p>
-<p><code>tabBar</code> ：定义底部栏目，都可以从字面意思理解，不多说</p>
-<p><code>networkTimeout</code> ：网络的配置，包括请求的时间，上传下载文件的大小等</p>
-<p><code>debug</code> ：布尔值，是否启动debug</p>
-<h3 id="适配"><a href="#适配" class="headerlink" title="适配"></a>适配</h3><p>给的demo中有的是用flex来布局还有的用px，还有rpx，这个rpx我看到编译之后是rem，是以75为基准的，所以说它的设计稿应该是750</p>
-<h3 id="公共样式"><a href="#公共样式" class="headerlink" title="公共样式"></a>公共样式</h3><p>app.wxss文件是公共样式</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/wx/" itemprop="url">
-                  微信小程序web开发者工具0.9版本和破解方法以及demo
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-22T09:48:00+08:00" content="2016-09-22">
-              2016-09-22
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/微信/" itemprop="url" rel="index">
-                    <span itemprop="name">微信</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/wx/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/wx/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/wx/" class="leancloud_visitors" data-flag-title="微信小程序web开发者工具0.9版本和破解方法以及demo">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>##相关资源</p>
-<ul>
-<li><p>开发工具 v0.9 和 demo</p>
-<ul>
-<li>百度: <a href="https://pan.baidu.com/s/1pLTKIqJ">https://pan.baidu.com/s/1pLTKIqJ</a> （密码: iswg）</li>
-<li>360: <a href="https://yunpan.cn/ckvXjEbnFYMSC">https://yunpan.cn/ckvXjEbnFYMSC</a> （提取码：f9ca）</li>
-</ul>
-</li>
-<li><p>Demo源代码</p>
-<ul>
-<li>链接：<a href="http://pan.baidu.com/s/1c18SlSc">http://pan.baidu.com/s/1c18SlSc</a> 密码：xo4v</li>
-</ul>
-</li>
-</ul>
-<p>##破解步骤</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/wx/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/bigcan-lesson-1/" itemprop="url">
-                  移动端适配方法合集
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-14T14:44:00+08:00" content="2016-08-14">
-              2016-08-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/BigCan/" itemprop="url" rel="index">
-                    <span itemprop="name">BigCan</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/bigcan-lesson-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/bigcan-lesson-1/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/bigcan-lesson-1/" class="leancloud_visitors" data-flag-title="移动端适配方法合集">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>首先我先说两个概念，第一，响应式：一个页面在不同尺寸的浏览器中不同的表现；第二，自适应：一个页面在任何尺寸浏览器下表现一致.这里只说自适应。</p>
-<h4 id="1-简单粗暴型"><a href="#1-简单粗暴型" class="headerlink" title="1.简单粗暴型"></a>1.简单粗暴型</h4>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/bigcan-lesson-1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/prevent-iframe/" itemprop="url">
-                  防止被嵌套iframe
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-26T22:00:00+08:00" content="2016-06-26">
-              2016-06-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/prevent-iframe/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/prevent-iframe/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/prevent-iframe/" class="leancloud_visitors" data-flag-title="防止被嵌套iframe">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近同事做了个h5放到了我们m.sohu.com上，当通过uc搜狐新闻主页访问这个h5的时候被uc用iframe嵌套到了他们自己的页面，从而使iframe里的布局错乱，真是醉了，最后找到了解决办法是判断主域名和iframe引用域名是否一致，代码如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(top != self)&#123;</div><div class="line">    top.location = self.location</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1101,14 +1103,14 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7xif9n.com1.z0.glb.clouddn.com/logo.gif"
-               alt="azq" />
-          <p class="site-author-name" itemprop="name">azq</p>
+               alt="AIO" />
+          <p class="site-author-name" itemprop="name">AIO</p>
           <p class="site-description motion-element" itemprop="description">看我的牙白不白呀，嘿嘿嘿...</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1203,7 +1205,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">azq</span>
+  <span class="author" itemprop="copyrightHolder">AIO</span>
 </div>
 
 <div class="powered-by">
@@ -1345,6 +1347,26 @@
   
 
   
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
   
 
