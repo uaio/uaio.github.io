@@ -92,13 +92,11 @@
 <meta property="og:site_name" content="AIO">
 <meta property="og:description" content="首先我先说两个概念，第一，响应式：一个页面在不同尺寸的浏览器中不同的表现；第二，自适应：一个页面在任何尺寸浏览器下表现一致.这里只说自适应。
 1.简单粗暴型">
-<meta property="og:image" content="http://7xif9n.com1.z0.glb.clouddn.com/bigcan-code.jpg">
-<meta property="og:updated_time" content="2016-11-02T11:36:21.143Z">
+<meta property="og:updated_time" content="2016-11-23T13:25:57.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端适配方法合集">
 <meta name="twitter:description" content="首先我先说两个概念，第一，响应式：一个页面在不同尺寸的浏览器中不同的表现；第二，自适应：一个页面在任何尺寸浏览器下表现一致.这里只说自适应。
 1.简单粗暴型">
-<meta name="twitter:image" content="http://7xif9n.com1.z0.glb.clouddn.com/bigcan-code.jpg">
 
 
 
@@ -340,13 +338,13 @@
         <p>首先我先说两个概念，第一，响应式：一个页面在不同尺寸的浏览器中不同的表现；第二，自适应：一个页面在任何尺寸浏览器下表现一致.这里只说自适应。</p>
 <h4 id="1-简单粗暴型"><a href="#1-简单粗暴型" class="headerlink" title="1.简单粗暴型"></a>1.简单粗暴型</h4><a id="more"></a>
 <p><strong>zoom</strong>方式：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</span><span class="comment">&lt;!--必须,放在head标签中--&gt;</span>   </div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    var _SCALE_ = 1;</div><div class="line">    _SCALE_ = function ()&#123;</div><div class="line">    var deviceWidth = document.documentElement.clientWidth,</div><div class="line">    scale = deviceWidth / 640;</div><div class="line">    scale = scale &gt; 1 ? 1 : scale;</div><div class="line">    document.body.style.zoom = scale;</div><div class="line">    return scale;//留着给js用</div><div class="line">&#125;();//在body下执行即可</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</span><span class="comment">&lt;!--必须,放在head标签中--&gt;</span>   </div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> _SCALE_ = <span class="number">1</span>;</div><div class="line">    _SCALE_ = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth,</div><div class="line">    scale = deviceWidth / <span class="number">640</span>;</div><div class="line">    scale = scale &gt; <span class="number">1</span> ? <span class="number">1</span> : scale;</div><div class="line">    <span class="built_in">document</span>.body.style.zoom = scale;</div><div class="line">    <span class="keyword">return</span> scale;<span class="comment">//留着给js用</span></div><div class="line">&#125;();<span class="comment">//在body下执行即可</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>以上是通过css属性zoom来缩放页面，设计稿宽度为640(以下设计稿尺寸都为640)，所以这样的好处就是直接按照原来设计稿的尺寸用px来写css，不过这个显然不够高大上，页面有时会不清晰，但是通过和%的配合也可以快速的构建你的h5页面</p>
 <p><strong>css3的scale</strong>方式：</p>
 <p>此方式bug众多，不适合新手，也不适合老司机，所以 略略略</p>
 <h4 id="2-温柔小巧型"><a href="#2-温柔小巧型" class="headerlink" title="2.温柔小巧型"></a>2.温柔小巧型</h4><p><strong>meta-viewport-scale</strong>方式：</p>
 <p>通过比例来对initial-scale等属性进行重置，少部分浏览器不识别重置</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</span><span class="comment">&lt;!--必须,放在head标签中--&gt;</span>   </div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">var _SCALE_ = 1;</div><div class="line">    _SCALE_ = function ()&#123;</div><div class="line">    var deviceWidth = document.documentElement.clientWidth,</div><div class="line">    scale = deviceWidth / 640;</div><div class="line">    scale = scale &gt; 1 ? 1 : scale;</div><div class="line">    var metaEl = document.querySelector('meta[name="viewport"]');</div><div class="line">    metaEl.setAttribute('content', 'width=640,initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');</div><div class="line">    return scale;</div><div class="line">&#125;();</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</span><span class="comment">&lt;!--必须,放在head标签中--&gt;</span>   </div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> _SCALE_ = <span class="number">1</span>;</div><div class="line">    _SCALE_ = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> deviceWidth = <span class="built_in">document</span>.documentElement.clientWidth,</div><div class="line">    scale = deviceWidth / <span class="number">640</span>;</div><div class="line">    scale = scale &gt; <span class="number">1</span> ? <span class="number">1</span> : scale;</div><div class="line">    <span class="keyword">var</span> metaEl = <span class="built_in">document</span>.querySelector(<span class="string">'meta[name="viewport"]'</span>);</div><div class="line">    metaEl.setAttribute(<span class="string">'content'</span>, <span class="string">'width=640,initial-scale='</span> + scale + <span class="string">',maximum-scale='</span> + scale + <span class="string">', minimum-scale='</span> + scale + <span class="string">',user-scalable=no'</span>);</div><div class="line">    <span class="keyword">return</span> scale;</div><div class="line">&#125;();</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>这种方式和zoom的方式类似也是采用缩放，css也是按照原始设计稿来写,也能解决1px的问题，暂时没有发现什么问题,也许会有不清晰的现象,如果有同学在使用这种方法的时候遇到问题请及时告诉我,赶紧填坑</p>
 <h4 id="3-高端时尚型"><a href="#3-高端时尚型" class="headerlink" title="3.高端时尚型"></a>3.高端时尚型</h4><p>这是个高清适配的方法,除了重置meta失效的浏览器</p>
 <p><strong>dpr，rem，meta</strong></p>
@@ -363,8 +361,7 @@
 <p>css中rem的处理方式还是同第三种的解决方式</p>
 <p>这种方法兼容性比较好，移动端基本都ok了;有的时候设计出来的设计稿可能，略微的长一些，这时候我们在布局上就要用上%和vh,flex,图片要设置高度宽自动,这种方法真的要随机应变了，但是这种方法也是对于观看者最友好的，能最大程度的不因可视区域的变小而影响观看</p>
 <p>以上是我用过的，踩过坑的方法，还有其他方法请一起踩坑哦<br>以上有什么代码、概念之类的错误请及时批斗，也欢迎批斗</p>
-<p>不知道以上对大家有没有帮助，没有的话我也写了这篇文章了；有的话那我就心满意足了<br>公众号</p>
-<p><img src="http://7xif9n.com1.z0.glb.clouddn.com/bigcan-code.jpg" alt="BigCan"></p>
+<p>不知道以上对大家有没有帮助，没有的话我也写了这篇文章了；有的话那我就心满意足了</p>
 <p><a href="http://bigcan.win" target="_blank" rel="external">我们的主页</a></p>
 
       
@@ -518,7 +515,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-count">49</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -526,7 +523,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -535,7 +532,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">36</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
