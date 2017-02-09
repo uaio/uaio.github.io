@@ -1,3 +1,32 @@
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+Pseudo ::scrollbar-button element,
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+Pseudo ::scrollbar-corner element,
+::-webkit-scrollbar-corner {
+  display: block;
+}
+Pseudo ::scrollbar-thumb element,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.2);
+}
+Pseudo ::scrollbar-track element,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+}
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -1564,7 +1593,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #87a298;
+  background: #fff4a1;
 }
 .links-of-blogroll {
   font-size: 13px;

@@ -259,6 +259,415 @@
             
               
                 
+                <a class="post-title-link" href="/blog/20161125/" itemprop="url">
+                  移动端视频-h5的实现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-25T10:44:00+08:00" content="2016-11-25">
+              2016-11-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/html5/" itemprop="url" rel="index">
+                    <span itemprop="name">html5</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/20161125/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/20161125/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/20161125/" class="leancloud_visitors" data-flag-title="移动端视频-h5的实现">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>一夜之间，腾讯动漫的h5刷爆朋友圈，又一个视频类的h5出现了，这次是薛之谦，也许接下来大明星们都会纷纷加入</p>
+<h3 id="识别终端以及浏览器"><a href="#识别终端以及浏览器" class="headerlink" title="识别终端以及浏览器"></a>识别终端以及浏览器</h3><p>video在不同终端和浏览器中的表现是不同的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ua = <span class="function"><span class="keyword">function</span>(<span class="params">ua</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">Android</span>: <span class="regexp">/Android/ig</span>.test(ua),</div><div class="line">        <span class="attr">iOS</span>: <span class="regexp">/AppleWebKit/</span>.test(ua) &amp;&amp; <span class="regexp">/Mobile\/\w+/</span>.test(ua),</div><div class="line">        <span class="attr">QQAC_ANDROID</span>: <span class="regexp">/(^| )QQAC_Client_Android( |\/|$)/i</span>.test(ua),</div><div class="line">        <span class="attr">QQAC_IOS</span>: <span class="regexp">/(^| )QQAC_Client_iOS( |\/|$)/i</span>.test(ua),</div><div class="line">    &#125;</div><div class="line">&#125;(navigator.userAgent);</div><div class="line"><span class="keyword">if</span>()&#123;</div><div class="line">	<span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">	script.src = <span class="string">'apiphone-inline-video.browser.js'</span>;<span class="comment">//禁止苹果全屏播放视频并去掉进度条</span></div><div class="line">	<span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].insertBefore(script, <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].childNodes[<span class="number">0</span>])</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>本想把各个浏览器的判断方法都写出来，但是想来想去还是用到哪些就写哪些吧</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/20161125/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/20161123/" itemprop="url">
+                  html5地理位置(geolocation)大法好
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-23T14:44:00+08:00" content="2016-11-23">
+              2016-11-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/html5/" itemprop="url" rel="index">
+                    <span itemprop="name">html5</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/20161123/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/20161123/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/20161123/" class="leancloud_visitors" data-flag-title="html5地理位置(geolocation)大法好">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>礼物不需挑最贵，只要香榭的落叶</p>
+</blockquote>
+<p>本想拿这句当标题的，可是怕被当做标题党。杰迷应该对这句话很是熟悉,《告白气球》的歌词，方文山的作词很是吊啊。这句话的意思是,送的礼物不要太贵重,只要香榭丽舍大道的落叶就可以了,但是香榭丽舍大道是个啥,它是法国巴黎的一个繁华的地方,我滴天呐,去趟巴黎也挺贵吧,用百度地图查了下,居然定位不到外国,这个定位也是够够的了,说了这么多废话,主(qiang)要(la)引(ying)出(zhuai)这篇要说的’地理位置的定位’</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/20161123/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/animation/" itemprop="url">
+                  网页动画
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-21T09:44:00+08:00" content="2016-11-21">
+              2016-11-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/html5/" itemprop="url" rel="index">
+                    <span itemprop="name">html5</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/animation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/animation/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/animation/" class="leancloud_visitors" data-flag-title="网页动画">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>有个好的文章开头很重要，但是我就是不会写，直接进入正题。</p>
+<h3 id="css3-animation"><a href="#css3-animation" class="headerlink" title="css3-animation"></a>css3-animation</h3><p>不知道大家对它是不是很熟悉了呢<br><code>animation: name duration timing-function delay iteration-count direction</code><br>animation 属性是一个简写属性，用于设置动画属性：</p>
+<ul>
+<li>animation-name:动画名称，需要用@keyframes去设置一个动画</li>
+<li>animation-duration:动画完成的周期，0则不会播放动画</li>
+<li>animation-timing-function:动画速度的曲线</li>
+<li>animation-delay:延迟执行动画的时间,也可以负值</li>
+<li>animation-iteration-count:动画被播放的次数</li>
+<li>animation-direction:播放方向</li>
+<li>animation-fill-mode:设置动画结束后的状态</li>
+<li>animation-play-state:</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/animation/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/blog/egret-anm1/" itemprop="url">
                   egret元素按照二次贝塞尔曲线运动
                 </a>
@@ -633,405 +1042,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/ios-overflow-scrolling/" itemprop="url">
-                  ios局部滚动的bug所引发的思考
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-10T14:48:00+08:00" content="2016-11-10">
-              2016-11-10
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/css3/" itemprop="url" rel="index">
-                    <span itemprop="name">css3</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/ios-overflow-scrolling/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/ios-overflow-scrolling/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/ios-overflow-scrolling/" class="leancloud_visitors" data-flag-title="ios局部滚动的bug所引发的思考">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>流畅的不要不要的ios出来的bug让人咬牙切齿。<br>bug产生的环境：局部滚动，外部并没有禁止默认浏览器事件<br>bug：导致局部滑动不流畅严重情况下不能滑动<br>解决方案:<br>1:js禁止外部的浏览器默认事件，停止局部事件冒泡（对于结构简单的页面来说可能适合）<br>2:<code>-webkit-overflow-scrolling:touch</code>给body和局部滚动的元素</p>
-<p><code>-webkit-overflow-scrolling:touch</code> 创建了带有硬件加速的系统级控件</p>
-<p>但是呢，通过从网上的查看这个可能带来其他的bug，用js设置局部滚动的scrollTop的时候会出现空白，解决方案：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">el.WebKitOverflowScrolling = <span class="string">'auto'</span>;</div><div class="line">el.scrollTop = <span class="number">500</span>;</div><div class="line">el.WebKitOverflowScrolling = <span class="string">'touch'</span>;</div></pre></td></tr></table></figure></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/ios-overflow-scrolling/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/parseint/" itemprop="url">
-                  从parseInt(0.0000009)说起
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-01T14:44:00+08:00" content="2016-11-01">
-              2016-11-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/parseint/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/parseint/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/parseint/" class="leancloud_visitors" data-flag-title="从parseInt(0.0000009)说起">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近看个很多奇特的js相关的文章，真是涨了见识，对于js基础比较薄弱的我来说简直可以用惊叹来形容，“怎么回会这样”、“我擦，不可能吧”;<br>先说一说这个<code>parseInt(0.0000009)</code>结果吧，是0.000001?,是0？还是原始值?结果是9，是9，是9；不要惊讶，下面我通过概念到举例来说明一下这个‘陷阱’</p>
-<p><code>parseInt(string, radix)</code><br>string    必需。要被解析的字符串。<br>radix     可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。<br>如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。<br>如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。</p>
-<p>举几个栗子:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//以下打印结果均为chrome控制台测试结果</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'123'</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'0123'</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"010"</span>);<span class="comment">//10</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"19"</span>,<span class="number">10</span>);<span class="comment">//19</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"011"</span>,<span class="number">2</span>);<span class="comment">//3</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"011"</span>,<span class="number">2</span>);<span class="comment">//3</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"16"</span>,<span class="number">8</span>);<span class="comment">//14</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"0x11"</span>);<span class="comment">//31</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"1f"</span>,<span class="number">16</span>);<span class="comment">//31</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"9e-7"</span>);<span class="comment">//9</span></div><div class="line"><span class="comment">//可以看到这些都是非常标准的传值</span></div></pre></td></tr></table></figure>
-<p>不标准的举几个栗子:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseInt</span>(<span class="number">123</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">123.123</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">0x11</span>);<span class="comment">//17</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">1</span>f,<span class="number">16</span>);<span class="comment">//SyntaxError</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">0.000009</span>);<span class="comment">//0</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">0.0000009</span>);<span class="comment">//9</span></div><div class="line"><span class="comment">//现在看到我们现在把第一个参数传入number的类型就会有意想不到的结果这到底是为什么呢</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>因为parseInt第一个参数接受的是string的类型，当传入number的时候会通过toString对其转换;<br>对于小于 1e-6 的数值来说，toString 时会自动转换为科学计数法。</p>
-</blockquote>
-<p>这个就能解释为什么<code>parseInt(0.0000009)</code>结果是9了，其实是<code>parseInt(0.0000009)</code> –&gt; <code>parseInt(&#39;9e-7&#39;)</code> –&gt; 9</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/20161002/" itemprop="url">
-                  这几个天面试的感受
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-01T14:44:00+08:00" content="2016-11-01">
-              2016-11-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/生活/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/20161002/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/20161002/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/20161002/" class="leancloud_visitors" data-flag-title="这几个天面试的感受">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>前些日子，面试前端的人挺多，有实习生，有工作了一年、两年的。现在的程序员不像以前那么稳，现在的孩子充满了浮躁，培训出来的孩子出口就敢要10k+，想想自己当初从学校出来6k自己就挺高兴的。简历上写得感觉很流弊的样子，问了几个经常用到的东西就支支吾吾了，让人怎么问。一直觉得自己挺渣的，英文文档看的不明白，基础也不好，自认为自己不是那种可以造轮子的人，致力于用工具来提升自己的工作效率和代码质量。在这浮躁的社会要做到不骄不躁也是挺不容易的。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1077,7 +1087,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">49</span>
+              <span class="site-state-item-count">52</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1094,7 +1104,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1168,7 +1178,7 @@
         <div class="copyright" >
   
   &copy;  2014 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1332,7 +1342,7 @@
       }
     });
   </script>
-  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
   

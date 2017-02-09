@@ -259,6 +259,405 @@
             
               
                 
+                <a class="post-title-link" href="/blog/ios-overflow-scrolling/" itemprop="url">
+                  ios局部滚动的bug所引发的思考
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-10T14:48:00+08:00" content="2016-11-10">
+              2016-11-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/css3/" itemprop="url" rel="index">
+                    <span itemprop="name">css3</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/ios-overflow-scrolling/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/ios-overflow-scrolling/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/ios-overflow-scrolling/" class="leancloud_visitors" data-flag-title="ios局部滚动的bug所引发的思考">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>流畅的不要不要的ios出来的bug让人咬牙切齿。<br>bug产生的环境：局部滚动，外部并没有禁止默认浏览器事件<br>bug：导致局部滑动不流畅严重情况下不能滑动<br>解决方案:<br>1:js禁止外部的浏览器默认事件，停止局部事件冒泡（对于结构简单的页面来说可能适合）<br>2:<code>-webkit-overflow-scrolling:touch</code>给body和局部滚动的元素</p>
+<p><code>-webkit-overflow-scrolling:touch</code> 创建了带有硬件加速的系统级控件</p>
+<p>但是呢，通过从网上的查看这个可能带来其他的bug，用js设置局部滚动的scrollTop的时候会出现空白，解决方案：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">el.WebKitOverflowScrolling = <span class="string">'auto'</span>;</div><div class="line">el.scrollTop = <span class="number">500</span>;</div><div class="line">el.WebKitOverflowScrolling = <span class="string">'touch'</span>;</div></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/ios-overflow-scrolling/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/20161002/" itemprop="url">
+                  这几个天面试的感受
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-01T14:44:00+08:00" content="2016-11-01">
+              2016-11-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/生活/" itemprop="url" rel="index">
+                    <span itemprop="name">生活</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/20161002/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/20161002/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/20161002/" class="leancloud_visitors" data-flag-title="这几个天面试的感受">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前些日子，面试前端的人挺多，有实习生，有工作了一年、两年的。现在的程序员不像以前那么稳，现在的孩子充满了浮躁，培训出来的孩子出口就敢要10k+，想想自己当初从学校出来6k自己就挺高兴的。简历上写得感觉很流弊的样子，问了几个经常用到的东西就支支吾吾了，让人怎么问。一直觉得自己挺渣的，英文文档看的不明白，基础也不好，自认为自己不是那种可以造轮子的人，致力于用工具来提升自己的工作效率和代码质量。在这浮躁的社会要做到不骄不躁也是挺不容易的。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/parseint/" itemprop="url">
+                  从parseInt(0.0000009)说起
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-01T14:44:00+08:00" content="2016-11-01">
+              2016-11-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/parseint/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/parseint/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/parseint/" class="leancloud_visitors" data-flag-title="从parseInt(0.0000009)说起">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近看个很多奇特的js相关的文章，真是涨了见识，对于js基础比较薄弱的我来说简直可以用惊叹来形容，“怎么回会这样”、“我擦，不可能吧”;<br>先说一说这个<code>parseInt(0.0000009)</code>结果吧，是0.000001?,是0？还是原始值?结果是9，是9，是9；不要惊讶，下面我通过概念到举例来说明一下这个‘陷阱’</p>
+<p><code>parseInt(string, radix)</code><br>string    必需。要被解析的字符串。<br>radix     可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。<br>如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。<br>如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。</p>
+<p>举几个栗子:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//以下打印结果均为chrome控制台测试结果</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'123'</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'0123'</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"010"</span>);<span class="comment">//10</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"19"</span>,<span class="number">10</span>);<span class="comment">//19</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"011"</span>,<span class="number">2</span>);<span class="comment">//3</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"011"</span>,<span class="number">2</span>);<span class="comment">//3</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"16"</span>,<span class="number">8</span>);<span class="comment">//14</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"0x11"</span>);<span class="comment">//31</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"1f"</span>,<span class="number">16</span>);<span class="comment">//31</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">"9e-7"</span>);<span class="comment">//9</span></div><div class="line"><span class="comment">//可以看到这些都是非常标准的传值</span></div></pre></td></tr></table></figure>
+<p>不标准的举几个栗子:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">parseInt</span>(<span class="number">123</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">123.123</span>);<span class="comment">//123</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">0x11</span>);<span class="comment">//17</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">1</span>f,<span class="number">16</span>);<span class="comment">//SyntaxError</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">0.000009</span>);<span class="comment">//0</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="number">0.0000009</span>);<span class="comment">//9</span></div><div class="line"><span class="comment">//现在看到我们现在把第一个参数传入number的类型就会有意想不到的结果这到底是为什么呢</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>因为parseInt第一个参数接受的是string的类型，当传入number的时候会通过toString对其转换;<br>对于小于 1e-6 的数值来说，toString 时会自动转换为科学计数法。</p>
+</blockquote>
+<p>这个就能解释为什么<code>parseInt(0.0000009)</code>结果是9了，其实是<code>parseInt(0.0000009)</code> –&gt; <code>parseInt(&#39;9e-7&#39;)</code> –&gt; 9</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/blog/webpack/" itemprop="url">
                   构建webpack+jquery+es6+reactjs自动化入坑
                 </a>
@@ -653,425 +1052,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/sublime/" itemprop="url">
-                  sublime text 3 破解 安装插件 设置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-09T09:48:00+08:00" content="2016-10-09">
-              2016-10-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index">
-                    <span itemprop="name">tools</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/sublime/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/sublime/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/sublime/" class="leancloud_visitors" data-flag-title="sublime text 3 破解 安装插件 设置">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>再一次写关于sublime 神器的相关配置，这次会比较完善</p>
-</blockquote>
-<h4 id="安装sublime-text-3"><a href="#安装sublime-text-3" class="headerlink" title="安装sublime text 3"></a>安装sublime text 3</h4><p>a) 按住Ctrl键 点击 <a href="http://www.sublimetext.com/">sublime text 首页</a></p>
-<p>b) <img src="http://7xif9n.com1.z0.glb.clouddn.com/NY9%5BXR2P_37_4U5W%25%7B3UKQ7.png" alt="下载位置"></p>
-<p>c) Windows 64 bit - also available as a portable version  64位便携版 ps:下载可能需要翻墙;安装到u盘或者初c盘其他的位置，因为这个我们可以随时拷贝走或者同步云亦或者托管代码仓库</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/sublime/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/bigcan-lesson-2/" itemprop="url">
-                  移动端页面优化方案
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-07T21:32:00+08:00" content="2016-10-07">
-              2016-10-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/BigCan/" itemprop="url" rel="index">
-                    <span itemprop="name">BigCan</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/bigcan-lesson-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/bigcan-lesson-2/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/bigcan-lesson-2/" class="leancloud_visitors" data-flag-title="移动端页面优化方案">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<ul>
-<li>加载优化 </li>
-<li>图片优化 </li>
-<li>css优化</li>
-<li>脚本优化 </li>
-<li>渲染优化</li>
-</ul>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/bigcan-lesson-2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/wx-study/" itemprop="url">
-                  微信小程序demo讲解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-23T09:48:00+08:00" content="2016-09-23">
-              2016-09-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/微信/" itemprop="url" rel="index">
-                    <span itemprop="name">微信</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/wx-study/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/wx-study/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/wx-study/" class="leancloud_visitors" data-flag-title="微信小程序demo讲解">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>小程序代码需要用MINA这个框架,类似react-native，只是将jsx中关于创建html的东西拿到wxml里</p>
-</blockquote>
-<h3 id="解决开发工具破解版请求数据问题"><a href="#解决开发工具破解版请求数据问题" class="headerlink" title="解决开发工具破解版请求数据问题"></a>解决开发工具破解版请求数据问题</h3><p>修改..\微信web开发者工具0.9\package.nw\app\dist\weapp\appservice\asdebug.js中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">e, o</span>) </span>&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> n = F.projectConfig, t = n.Network, r = <span class="string">"webscoket"</span> === o ? t.WsRequestDomain : t.RequestDomain, a = <span class="number">0</span>; a &lt; r.length; a++)</div><div class="line">            <span class="keyword">if</span> (<span class="number">0</span> === e.indexOf(r[a])) <span class="keyword">return</span> !<span class="number">0</span></div><div class="line">    &#125; <span class="keyword">catch</span> (i) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">console</span>.error(i), !<span class="number">1</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>为</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">i</span>(<span class="params">e, o</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后就可以在某页面的js中去</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">wx.request(&#123;</div><div class="line">    <span class="attr">url</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">data</span>: &#123;&#125;,</div><div class="line">    <span class="attr">header</span>:&#123;</div><div class="line">      <span class="string">"Content-Type"</span>:<span class="string">"application/json"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> data = res.data;</div><div class="line">      <span class="built_in">console</span>.log(data);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
-<h3 id="app-json里的各个参数"><a href="#app-json里的各个参数" class="headerlink" title="app.json里的各个参数"></a>app.json里的各个参数</h3><p><code>pages</code> ：页面路径，不需要写后缀，因为他会自动寻找到</p>
-<p><code>window</code> ：设置窗口，里面还有一些属性，字面上很容易理解，这里不多说</p>
-<p><code>tabBar</code> ：定义底部栏目，都可以从字面意思理解，不多说</p>
-<p><code>networkTimeout</code> ：网络的配置，包括请求的时间，上传下载文件的大小等</p>
-<p><code>debug</code> ：布尔值，是否启动debug</p>
-<h3 id="适配"><a href="#适配" class="headerlink" title="适配"></a>适配</h3><p>给的demo中有的是用flex来布局还有的用px，还有rpx，这个rpx我看到编译之后是rem，是以75为基准的，所以说它的设计稿应该是750</p>
-<h3 id="公共样式"><a href="#公共样式" class="headerlink" title="公共样式"></a>公共样式</h3><p>app.wxss文件是公共样式</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1117,7 +1097,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">49</span>
+              <span class="site-state-item-count">52</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1134,7 +1114,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1208,7 +1188,7 @@
         <div class="copyright" >
   
   &copy;  2014 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1372,7 +1352,7 @@
       }
     });
   </script>
-  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
   
