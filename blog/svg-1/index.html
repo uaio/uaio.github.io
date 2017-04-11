@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="AIO">
 <meta property="og:description" content="以前写东西都是零零散散的，总是想学会一些框架，学着学着总会有一些不解，有很多疑惑，没有一款框架是非常完美的。断断续续学了一些白鹭引擎的东西，其中遇到很多困难，结果是大多数没有解决，然后我就开始思考，是什么东西阻碍我们学习呢，是懒？是时间？是什么？为什么有人能写出各种牛逼的框架，对，是基础，不懂基础是无法跟随框架开发者的思路的。所以我开始从基础开始，其实最后归结还是js，html5新增的东西也只是">
 <meta property="og:image" content="http://www.gratisography.com/pictures/259_1.jpg">
-<meta property="og:updated_time" content="2016-09-22T14:32:48.365Z">
+<meta property="og:updated_time" content="2017-03-06T11:32:40.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html5之图形的未来-svg初识其真容">
 <meta name="twitter:description" content="以前写东西都是零零散散的，总是想学会一些框架，学着学着总会有一些不解，有很多疑惑，没有一款框架是非常完美的。断断续续学了一些白鹭引擎的东西，其中遇到很多困难，结果是大多数没有解决，然后我就开始思考，是什么东西阻碍我们学习呢，是懒？是时间？是什么？为什么有人能写出各种牛逼的框架，对，是基础，不懂基础是无法跟随框架开发者的思路的。所以我开始从基础开始，其实最后归结还是js，html5新增的东西也只是">
@@ -285,8 +285,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/html5标签探索系列/" itemprop="url" rel="index">
-                    <span itemprop="name">html5标签探索系列</span>
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
                   </a>
                 </span>
 
@@ -347,7 +347,7 @@
 <h2 id="与Flash的比较"><a href="#与Flash的比较" class="headerlink" title="与Flash的比较"></a>与Flash的比较</h2><p>SVG 的主要竞争者是Flash。与Flash相比，SVG 最大的优势是它与其他标准(比如XSL和DOM)相兼容，操作方便，而Flash则是未开源的私有技术。其它的比如存储的格式，动态生成图形等方面，SVG也占有很大的优势。</p>
 <h2 id="表现方式"><a href="#表现方式" class="headerlink" title="表现方式"></a>表现方式</h2><p>svg支持的浏览器除了ie9以下（需要装插件）基本上主流浏览器都支持</p>
 <h3 id="内联到HTML"><a href="#内联到HTML" class="headerlink" title="内联到HTML"></a>内联到HTML</h3><p>SVG是标准的HTML元素，直接写到HTML中就可以了</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- &lt;meta content="text/html; charset=utf-8" http-equiv="Content-Type" /&gt; --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span> My First SVG Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> <span class="attr">version</span>=<span class="string">"1.1"</span> <span class="attr">width</span>=<span class="string">"200px"</span> <span class="attr">height</span>=<span class="string">"200px"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"0"</span> <span class="attr">y</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">"100%"</span> <span class="attr">height</span>=<span class="string">"100%"</span> <span class="attr">fill</span>=<span class="string">"none"</span> <span class="attr">stroke</span>=<span class="string">"black"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"100"</span> <span class="attr">cy</span>=<span class="string">"100"</span> <span class="attr">r</span>=<span class="string">"50"</span> <span class="attr">style</span>=<span class="string">"stroke: black; fill: red;"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- &lt;meta content="text/html; charset=utf-8" http-equiv="Content-Type" /&gt; --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span> My First SVG Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> <span class="attr">version</span>=<span class="string">"1.1"</span> <span class="attr">width</span>=<span class="string">"200px"</span> <span class="attr">height</span>=<span class="string">"200px"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"0"</span> <span class="attr">y</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">"100%"</span> <span class="attr">height</span>=<span class="string">"100%"</span> <span class="attr">fill</span>=<span class="string">"none"</span> <span class="attr">stroke</span>=<span class="string">"black"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"100"</span> <span class="attr">cy</span>=<span class="string">"100"</span> <span class="attr">r</span>=<span class="string">"50"</span> <span class="attr">style</span>=<span class="string">"stroke: black; fill: red;"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>在html5中头部的xml声明与svg的命名空间xmlns、版本version等部分基本可以不写，写是为了兼容吧</p>
 <h3 id="独立SVG文件"><a href="#独立SVG文件" class="headerlink" title="独立SVG文件"></a>独立SVG文件</h3><h4 id="独立的文件或者页面"><a href="#独立的文件或者页面" class="headerlink" title="独立的文件或者页面"></a>独立的文件或者页面</h4><p>就好像是html页面一样，例如<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"100%"</span> <span class="attr">height</span>=<span class="string">"100%"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- here. --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>然后直接访问就行了</p>
@@ -499,7 +499,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-count">56</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -507,7 +507,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -516,7 +516,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

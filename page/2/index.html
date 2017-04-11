@@ -259,6 +259,671 @@
             
               
                 
+                <a class="post-title-link" href="/blog/gulp-webpack/" itemprop="url">
+                  gulp和webpack的完美结合
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-03T14:44:00+08:00" content="2017-02-03">
+              2017-02-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/gulp-webpack/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/gulp-webpack/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/gulp-webpack/" class="leancloud_visitors" data-flag-title="gulp和webpack的完美结合">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>年后的第一天简直无聊到爆炸了，所以写一篇文章来慢慢恢复工作状态吧<br>之前写过gulp和webpack来实现一些自动化的东西，但是两个各自有自己的优点，现在我的需求就是h5单页，用es6来写<br>gulp来实现实时监控文件的变化以及css相关处理<br>webpack则处理js</p>
+<h1 id="包依赖-package-json"><a href="#包依赖-package-json" class="headerlink" title="包依赖(package.json)"></a>包依赖(package.json)</h1><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"gulp-temp"</span>,</div><div class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</div><div class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</div><div class="line">  <span class="attr">"scripts"</span>: &#123;</div><div class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"author"</span>: <span class="string">""</span>,</div><div class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span>,</div><div class="line">  <span class="attr">"devDependencies"</span>: &#123;</div><div class="line">    <span class="attr">"babel-core"</span>: <span class="string">"^6.21.0"</span>,</div><div class="line">    <span class="attr">"babel-loader"</span>: <span class="string">"^6.2.10"</span>,</div><div class="line">    <span class="attr">"babel-preset-es2015"</span>: <span class="string">"^6.18.0"</span>,</div><div class="line">    <span class="attr">"gulp"</span>: <span class="string">"^3.9.1"</span>,</div><div class="line">    <span class="attr">"gulp-autoprefixer"</span>: <span class="string">"^3.1.1"</span>,</div><div class="line">    <span class="attr">"gulp-concat"</span>: <span class="string">"^2.6.1"</span>,</div><div class="line">    <span class="attr">"gulp-cssnano"</span>: <span class="string">"^2.1.2"</span>,</div><div class="line">    <span class="attr">"gulp-less"</span>: <span class="string">"^3.3.0"</span>,</div><div class="line">    <span class="attr">"gulp-plumber"</span>: <span class="string">"^1.1.0"</span>,</div><div class="line">    <span class="attr">"gulp-postcss"</span>: <span class="string">"^6.2.0"</span>,</div><div class="line">    <span class="attr">"gulp-rename"</span>: <span class="string">"^1.2.2"</span>,</div><div class="line">    <span class="attr">"gulp-uglify"</span>: <span class="string">"^2.0.0"</span>,</div><div class="line">    <span class="attr">"gulp-webpack"</span>: <span class="string">"^1.5.0"</span>,</div><div class="line">    <span class="attr">"postcss-px2rem"</span>: <span class="string">"^0.3.0"</span>,</div><div class="line">    <span class="attr">"webpack"</span>: <span class="string">"^1.14.0"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/gulp-webpack/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/bugs-wx/" itemprop="url">
+                  关于x5内核浏览器对于overflow-x的支持
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-11T14:44:00+08:00" content="2017-01-11">
+              2017-01-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/bugs/" itemprop="url" rel="index">
+                    <span itemprop="name">bugs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/bugs-wx/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/bugs-wx/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/bugs-wx/" class="leancloud_visitors" data-flag-title="关于x5内核浏览器对于overflow-x的支持">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近碰到了一系列的bug，有系统本身的也有浏览器的原因，每个前端盼望着有一天内核的统一</p>
+<h2 id="环境x5内核浏览器-安卓"><a href="#环境x5内核浏览器-安卓" class="headerlink" title="环境x5内核浏览器 安卓"></a>环境x5内核浏览器 安卓</h2><h2 id="bug重现"><a href="#bug重现" class="headerlink" title="bug重现"></a>bug重现</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 100%; overflow-y: auto;overflow-x: hidden;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 120%;height: 100vh;background: red;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 20vh;background: black"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>出现上述情况是因为宽超出，整体高超出；就会出现这种<code>overflow-x: hidden</code>失效的情况</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>将内容再包一层<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 100%; overflow-y: auto; overflow-x: hidden;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: auto;overflow-y: auto; overflow-x: hidden;"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 120%;height: 100vh;background: red;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 20vh;background: black"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>就这样解决了</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/gulp/" itemprop="url">
+                  前端如何用gulp工具来自动化自己的项目
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-15T14:44:00+08:00" content="2016-12-15">
+              2016-12-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/gulp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/gulp/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/gulp/" class="leancloud_visitors" data-flag-title="前端如何用gulp工具来自动化自己的项目">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>好久没有更新了，实在是太忙了，一个项目接着一个，最终还是因为懒。<br>之前写过一个gulp感觉写得不是很详细，也是入门的时候，有很多东西不理解，所以今天进一步的去写一下gulp吧</p>
+<p>gulp的工作原理其实就是文档流，就是干的事情有先有后，就是这个工具处理完返回一个文档流给下一个工具再来处理，最后在转成文件的形式(个人理解)</p>
+<p>这里主要说gulp的配置，用它来为我们的项目来服务，那么我们先来看看我的这个配置都能干嘛<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/gulp/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/center/" itemprop="url">
+                  居中大法好
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-01T11:09:00+08:00" content="2016-12-01">
+              2016-12-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/center/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/center/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/center/" class="leancloud_visitors" data-flag-title="居中大法好">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="flexbox"><a href="#flexbox" class="headerlink" title="flexbox"></a>flexbox</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></div><div class="line">.container &#123;</div><div class="line">	display: flex;</div><div class="line">	flex-direction: row;</div><div class="line">	justify-content: center;</div><div class="line">	align-items: center;</div><div class="line">&#125;</div><div class="line">.center &#123;</div><div class="line">	background: #BDD8F5;</div><div class="line">	color: #000;</div><div class="line">	text-align: center;</div><div class="line">	font-size: 14px;</div><div class="line">	padding: 10px</div><div class="line">&#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span>BigCan<span class="tag">&lt;<span class="name">br</span> /&gt;</span>公众号<span class="tag">&lt;<span class="name">br</span> /&gt;</span>infefe<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/center/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/flex/" itemprop="url">
+                  Flexbox该怎么用以及应用场景
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-30T11:09:00+08:00" content="2016-11-30">
+              2016-11-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/flex/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/flex/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/flex/" class="leancloud_visitors" data-flag-title="Flexbox该怎么用以及应用场景">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Flex作为css3中的新属性，一直被大家所熟知但是，应用的地方确实很少，那么让我们一起来研究研究它吧<br>代码量比较大，请在pc端查看</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
+<li>设置了Flex布局后，子元素的float，clear，还有verticle-align属性都不起作用</li>
+<li>设置了display:flex属性的元素，称为Flex容器，他里面的所有子元素统称为容器成员，Flex容器有两根坐标轴：水平的叫主轴和垂直的叫交叉轴</li>
+<li>flex是display的一个属性值。与之相当应的还有一个是inline-flex。</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/flex/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/blog/20161125/" itemprop="url">
                   移动端视频-h5的实现
                 </a>
@@ -287,8 +952,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/html5/" itemprop="url" rel="index">
-                    <span itemprop="name">html5</span>
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
                   </a>
                 </span>
 
@@ -371,682 +1036,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/20161123/" itemprop="url">
-                  html5地理位置(geolocation)大法好
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-23T14:44:00+08:00" content="2016-11-23">
-              2016-11-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/html5/" itemprop="url" rel="index">
-                    <span itemprop="name">html5</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/20161123/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/20161123/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/20161123/" class="leancloud_visitors" data-flag-title="html5地理位置(geolocation)大法好">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>礼物不需挑最贵，只要香榭的落叶</p>
-</blockquote>
-<p>本想拿这句当标题的，可是怕被当做标题党。杰迷应该对这句话很是熟悉,《告白气球》的歌词，方文山的作词很是吊啊。这句话的意思是,送的礼物不要太贵重,只要香榭丽舍大道的落叶就可以了,但是香榭丽舍大道是个啥,它是法国巴黎的一个繁华的地方,我滴天呐,去趟巴黎也挺贵吧,用百度地图查了下,居然定位不到外国,这个定位也是够够的了,说了这么多废话,主(qiang)要(la)引(ying)出(zhuai)这篇要说的’地理位置的定位’</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/20161123/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/animation/" itemprop="url">
-                  网页动画
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-21T09:44:00+08:00" content="2016-11-21">
-              2016-11-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/html5/" itemprop="url" rel="index">
-                    <span itemprop="name">html5</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/animation/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/animation/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/animation/" class="leancloud_visitors" data-flag-title="网页动画">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>有个好的文章开头很重要，但是我就是不会写，直接进入正题。</p>
-<h3 id="css3-animation"><a href="#css3-animation" class="headerlink" title="css3-animation"></a>css3-animation</h3><p>不知道大家对它是不是很熟悉了呢<br><code>animation: name duration timing-function delay iteration-count direction</code><br>animation 属性是一个简写属性，用于设置动画属性：</p>
-<ul>
-<li>animation-name:动画名称，需要用@keyframes去设置一个动画</li>
-<li>animation-duration:动画完成的周期，0则不会播放动画</li>
-<li>animation-timing-function:动画速度的曲线</li>
-<li>animation-delay:延迟执行动画的时间,也可以负值</li>
-<li>animation-iteration-count:动画被播放的次数</li>
-<li>animation-direction:播放方向</li>
-<li>animation-fill-mode:设置动画结束后的状态</li>
-<li>animation-play-state:</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/animation/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/egret-anm1/" itemprop="url">
-                  egret元素按照二次贝塞尔曲线运动
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-17T19:23:06+08:00" content="2016-11-17">
-              2016-11-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/egret/" itemprop="url" rel="index">
-                    <span itemprop="name">egret</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/egret-anm1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/egret-anm1/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/egret-anm1/" class="leancloud_visitors" data-flag-title="egret元素按照二次贝塞尔曲线运动">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在用egret改造以前第一个h5页面的时候，突然就想到了路径动画，结果鼓捣出来了这个让元素按照二次贝塞尔曲线的路径运动的；我还要继续改造，准备删了这段，在这里保存一下吧</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> createGameScene():<span class="keyword">void</span> &#123;</div><div class="line">	var <span class="string">bg:</span>egret.Shape = <span class="keyword">new</span> egret.Shape();</div><div class="line">	bg.graphics.beginFill( <span class="number">0xFF00FF</span> );</div><div class="line">	bg.graphics.drawRect( <span class="number">0</span>, <span class="number">0</span>, <span class="number">10</span>, <span class="number">10</span> ); </div><div class="line">	bg.graphics.endFill();</div><div class="line">	var that = <span class="keyword">this</span>;</div><div class="line">	var obj = &#123;<span class="string">fac:</span><span class="number">0</span>&#125;</div><div class="line">	var funcChange = function():<span class="keyword">void</span>&#123;</div><div class="line">	    var obj = that.anm(bg,<span class="keyword">this</span>.fac,&#123;<span class="string">x0:</span><span class="number">100</span>,<span class="string">y0:</span><span class="number">100</span>,<span class="string">x1:</span><span class="number">300</span>,<span class="string">y1:</span><span class="number">300</span>,<span class="string">x2:</span><span class="number">500</span>,<span class="string">y2:</span><span class="number">100</span>&#125;)</div><div class="line">	    console.log(<span class="keyword">this</span>.fac)</div><div class="line">	    that.addChild(obj);</div><div class="line">	&#125;</div><div class="line">	egret.Tween.get( obj, &#123; <span class="string">onChange:</span>funcChange, <span class="string">onChangeObj:</span>obj &#125; ).to( &#123;<span class="string">fac:</span><span class="number">1</span>&#125;, <span class="number">2000</span> ,egret.Ease.sineIn);</div><div class="line">&#125;</div><div class="line"><span class="keyword">private</span> anm(obj,<span class="string">t:</span>number,obj1) &#123;<span class="comment">//二次贝塞尔曲线</span></div><div class="line">	obj.x = (<span class="number">1</span> - t) * (<span class="number">1</span> - t) * obj1.x0 + <span class="number">2</span> * t * (<span class="number">1</span> - t) * obj1.x1 + t * t * obj1.x2;</div><div class="line">	obj.y = (<span class="number">1</span> - t) * (<span class="number">1</span> - t) * obj1.y0 + <span class="number">2</span> * t * (<span class="number">1</span> - t) * obj1.y1 + t * t * obj1.y2;</div><div class="line">	<span class="keyword">return</span> obj</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/html5-dom-control/" itemprop="url">
-                  让你熟知jquery见鬼去吧
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-17T12:44:00+08:00" content="2016-11-17">
-              2016-11-17
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/html5-dom-control/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/html5-dom-control/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/html5-dom-control/" class="leancloud_visitors" data-flag-title="让你熟知jquery见鬼去吧">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="让你熟知的-见鬼吧"><a href="#让你熟知的-见鬼吧" class="headerlink" title="让你熟知的$见鬼吧"></a>让你熟知的$见鬼吧</h3><p>\$是jquery最具代表的符号，当然php也是，但是二者不能同日而语;不得不说jquery的选择器是大家赞不绝口的，在它1.x版本中对ie兼容性是最好的，这要归功于\$选择器;</p>
-<p>现在呢，html5的降临，移动端的巨大发展，让我们可以慢慢弃用这臃肿的工具，轻装上阵，打死你个龟孙儿 </p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/html5-dom-control/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/css3-anm-addEventListener/" itemprop="url">
-                  css3动画监听
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-15T11:38:00+08:00" content="2016-11-15">
-              2016-11-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/css3-anm-addEventListener/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/css3-anm-addEventListener/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/css3-anm-addEventListener/" class="leancloud_visitors" data-flag-title="css3动画监听">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>为一个元素添加一个动画class之后你还在用settimeout来延迟下一个动作了，你out啦<br>下面这些绝对是装逼的知识点。</p>
-<p>1.animation动画监听</p>
-<p>-webkit-animation动画其实有三个事件：<br>开始事件 webkitAnimationStart<br>结束事件 webkitAnimationEnd<br>重复运动事件 webkitAnimationIteration</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">dom.addEventListener(<span class="string">"webkitAnimationStart"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//动画开始时事件 </span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"start"</span>); </div><div class="line">&#125;, <span class="literal">false</span>); </div><div class="line">dom.addEventListener(<span class="string">"webkitAnimationEnd"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//动画结束时事件 </span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"end"</span>); </div><div class="line">&#125;, <span class="literal">false</span>); </div><div class="line">dom.addEventListener(<span class="string">"webkitAnimationIteration"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">//动画重复运动时的事件</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"end"</span>); <span class="comment">//第一遍动画完成输出end</span></div><div class="line">&#125;, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/css3-anm-addEventListener/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1087,7 +1081,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-count">56</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1095,7 +1089,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1104,7 +1098,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

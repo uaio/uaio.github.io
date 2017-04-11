@@ -259,8 +259,8 @@
             
               
                 
-                <a class="post-title-link" href="/blog/2016-will/" itemprop="url">
-                  2016我要做点什么呢
+                <a class="post-title-link" href="/blog/svg-3/" itemprop="url">
+                  html5之图形的未来-svg笔画与填充
                 </a>
               
             
@@ -273,8 +273,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-14T14:44:00+08:00" content="2016-02-14">
-              2016-02-14
+            <time itemprop="dateCreated" datetime="2016-03-21T11:34:00+08:00" content="2016-03-21">
+              2016-03-21
             </time>
           </span>
 
@@ -287,8 +287,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/生活/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
                   </a>
                 </span>
 
@@ -303,8 +303,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/blog/2016-will/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/2016-will/" itemprop="commentsCount"></span>
+                <a href="/blog/svg-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/svg-3/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -314,7 +314,7 @@
 
           
           
-             <span id="/blog/2016-will/" class="leancloud_visitors" data-flag-title="2016我要做点什么呢">
+             <span id="/blog/svg-3/" class="leancloud_visitors" data-flag-title="html5之图形的未来-svg笔画与填充">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,10 +337,548 @@
 
       
         
-          
-            <p><img src="http://www.gratisography.com/pictures/282_1.jpg" class="full-image"><br>2016年的春节已经过完了，在这新的一年，工作上要学习很多东西，首先就是nodejs和白鹭引擎，准备向着游戏h5进发了,还有就是坚持写博客，写总结，踩各种各样的坑；</p>
+          <h2 id="填充色-fill属性"><a href="#填充色-fill属性" class="headerlink" title="填充色 - fill属性"></a>填充色 - fill属性</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"10"</span> <span class="attr">y</span>=<span class="string">"10"</span> <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span> <span class="attr">stroke</span>=<span class="string">"blue"</span> <span class="attr">fill</span>=<span class="string">"red"</span> <span class="attr">fill-opacity</span>=<span class="string">"0.5"</span> <span class="attr">stroke-opacity</span>=<span class="string">"0.8"</span>/&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>如果不提供fill属性，则默认会使用黑色填充,如果要取消填充，需要设置成none。</li>
+<li>可以设置填充的透明度，就是fill-opacity，值的范围是0到1。</li>
+<li>稍微复杂一点的是fill-rule属性。这个属性定义了判断点是不是属于填充范围的算法；除了inherit这个值外，还有两个取值：nonzero：这个值采用的算法是：从需要判定的点向任意方向发射线，然后计算图形与线段交点的处的走向；计算结果从0开始，每有一个交点处的线段是从左到右的，就加1；每有一个交点处的线段是从右到左的，就减1；这样计算完所有交点后，如果这个计算的结果不等于0，则该点在图形内，需要填充；如果该值等于0，则在图形外，不需要填充。evenodd：这个值采用的算法是：从需要判定的点向任意方向发射线，然后计算图形与线段交点的个数，个数为奇数则改点在图形内，需要填充；个数为偶数则点在图形外，不需要填充。</li>
+</ol>
+<h2 id="边框色-stroke属性"><a href="#边框色-stroke属性" class="headerlink" title="边框色 - stroke属性"></a>边框色 - stroke属性</h2><p>上面的例子中已经用到了stroke属性，这个属性使用设置的值画图形的边框，使用起来也很直接，把颜色值赋给它就可以了。注意：</p>
+<ol>
+<li>如果不提供stroke属性，则默认不绘制图形边框。</li>
+<li>可以设置边的透明度，就是stroke-opacity，值的范围是0到1。<br>实际上，边的情况比图形内部稍微复杂一点，因为边除了颜色，还有”形状”需要定义。<h3 id="线的端点-stroke-linecap属性"><a href="#线的端点-stroke-linecap属性" class="headerlink" title="线的端点 - stroke-linecap属性"></a>线的端点 - stroke-linecap属性</h3>　　这个属性定义了线段端点的风格，这个属性可以使用butt,square,round三个值。看例子：
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/svg-3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/svg-2/" itemprop="url">
+                  html5之图形的未来-svg图形绘制、文本与图像
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-17T11:34:00+08:00" content="2016-03-17">
+              2016-03-17
+            </time>
+          </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/svg-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/svg-2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/svg-2/" class="leancloud_visitors" data-flag-title="html5之图形的未来-svg图形绘制、文本与图像">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="基本形状"><a href="#基本形状" class="headerlink" title="基本形状"></a>基本形状</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> <span class="attr">version</span>=<span class="string">"1.1"</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"250"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"10"</span> <span class="attr">y</span>=<span class="string">"10"</span> <span class="attr">width</span>=<span class="string">"30"</span> <span class="attr">height</span>=<span class="string">"30"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">rect</span> <span class="attr">x</span>=<span class="string">"60"</span> <span class="attr">y</span>=<span class="string">"10"</span> <span class="attr">rx</span>=<span class="string">"10"</span> <span class="attr">ry</span>=<span class="string">"10"</span> <span class="attr">width</span>=<span class="string">"30"</span> <span class="attr">height</span>=<span class="string">"30"</span> <span class="attr">stroke</span>=<span class="string">"black"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"25"</span> <span class="attr">cy</span>=<span class="string">"75"</span> <span class="attr">r</span>=<span class="string">"20"</span> <span class="attr">stroke</span>=<span class="string">"red"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">ellipse</span> <span class="attr">cx</span>=<span class="string">"75"</span> <span class="attr">cy</span>=<span class="string">"75"</span> <span class="attr">rx</span>=<span class="string">"20"</span> <span class="attr">ry</span>=<span class="string">"5"</span> <span class="attr">stroke</span>=<span class="string">"red"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">line</span> <span class="attr">x1</span>=<span class="string">"10"</span> <span class="attr">x2</span>=<span class="string">"50"</span> <span class="attr">y1</span>=<span class="string">"110"</span> <span class="attr">y2</span>=<span class="string">"150"</span> <span class="attr">stroke</span>=<span class="string">"orange"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">polyline</span> <span class="attr">points</span>=<span class="string">"60 110 65 120 70 115 75 130 80 125 85 140 90 135 95 150 100 145"</span></div><div class="line">      <span class="attr">stroke</span>=<span class="string">"orange"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">polygon</span> <span class="attr">points</span>=<span class="string">"50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180"</span></div><div class="line">      <span class="attr">stroke</span>=<span class="string">"green"</span> <span class="attr">fill</span>=<span class="string">"transparent"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M20,230 Q40,205 50,230 T90,230"</span> <span class="attr">fill</span>=<span class="string">"none"</span> <span class="attr">stroke</span>=<span class="string">"blue"</span> <span class="attr">stroke-width</span>=<span class="string">"5"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://7xif9n.com1.z0.glb.clouddn.com/svg.png"><br>这个例子画了很多形状：正常的矩形，带圆角的矩形，圆形，椭圆形，直线，折线，多边形，还有路径。这些都属于基本的图形元素。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/svg-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/svg-1/" itemprop="url">
+                  html5之图形的未来-svg初识其真容
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-17T09:34:00+08:00" content="2016-03-17">
+              2016-03-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/svg-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/svg-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/svg-1/" class="leancloud_visitors" data-flag-title="html5之图形的未来-svg初识其真容">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p> 以前写东西都是零零散散的，总是想学会一些框架，学着学着总会有一些不解，有很多疑惑，没有一款框架是非常完美的。断断续续学了一些白鹭引擎的东西，其中遇到很多困难，结果是大多数没有解决，然后我就开始思考，是什么东西阻碍我们学习呢，是懒？是时间？是什么？为什么有人能写出各种牛逼的框架，对，是基础，不懂基础是无法跟随框架开发者的思路的。所以我开始从基础开始，其实最后归结还是js，html5新增的东西也只是给js提供一个入口，开放权限，虽然以前弄过php但是还是想说js才是世界上最好的语言，不服来打我。<br><img src="http://www.gratisography.com/pictures/259_1.jpg" class="full-image" /><br>可缩放矢量图形(Scalable Vector Graphics，简称SVG)是一种使用XML来描述二维图形的语言(SVG严格遵从XML语法)。 SVG允许三种类型的图形对象：矢量图形形状（例如由直线和曲线组成的路径）、图像和文本。 可以将图形对象（包括文本）分组、样式化、转换和组合到以前呈现的对象中。 SVG 功能集包括嵌套转换、剪切路径、alpha 蒙板和模板对象。SVG绘图是交互式和动态的。 例如，可使用脚本来定义和触发动画。SVG是文本文件，动态操作是相当容易的。而且，SVG直接提供了完成动画的相关元素，操作起来非常方便。SVG与其他Web标准兼容，并直接支持文档对象模型DOM。SVG的图形元素基本上都支持DOM中的标准事件。（以上都是从网上找来的概念性文字）。<br>SVG既可以说是一种协议，也可以说是一门语言；既是HTML的一个标准元素，也是一种图片格式。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/svg-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/tap/" itemprop="url">
+                  自定义移动端点击事件tap
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-03T14:44:00+08:00" content="2016-03-03">
+              2016-03-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/tap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/tap/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/tap/" class="leancloud_visitors" data-flag-title="自定义移动端点击事件tap">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>开发移动端网页对于click的延迟应该很清楚的，移动端可以用touchstart来代替，但是一些复杂的交互可能不能满足，可能需要用hammerjs这类手势的库，但是平时一些细节上像点击出现按钮变化然后在移除效果再执行后面的程序的，就没有必要引入库了，所以昨天查了一天的资料，然后写了一个自定义的tap，请大家指正错误</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/tap/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/gulp-start/" itemprop="url">
+                  gulp初体验，进击nodejs第一站
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-25T09:14:00+08:00" content="2016-02-25">
+              2016-02-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/gulp-start/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/gulp-start/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/gulp-start/" class="leancloud_visitors" data-flag-title="gulp初体验，进击nodejs第一站">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="http://www.gratisography.com/pictures/283_1.jpg" class="full-image" /><br>今年我制定了学习nodejs的计划，对于前端来讲使用nodejs来工作的话，还是借助他的npm的各种包来实现一些自动化的东西，最近我学习了gulp，按照网上说的它更适合nodejs的工作流，可以通过它的一些插件来实现less编译，js、css格式化以及合并文件等等。</p>
+<hr>
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><p>其实也没有特别的文档目录结构，只是人们慢慢的总结的比较合理规范的目录<br>/项目根目录<br>—/src<br>—–/less<br>—–/images<br>—–/js<br>—–*.html<br>gulpfile.js<br>package.json<br>//node_modules//安装包依赖之后自动生成的<br>//—/web//编译后的文件放到这里</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/gulp-start/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -416,8 +954,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/less/" itemprop="url" rel="index">
-                    <span itemprop="name">less</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -498,536 +1036,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/gitCreateSSH_Key/" itemprop="url">
-                  Git SSH Key 生成步骤
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-14T14:44:00+08:00" content="2016-02-14">
-              2016-02-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/gitCreateSSH_Key/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/gitCreateSSH_Key/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/gitCreateSSH_Key/" class="leancloud_visitors" data-flag-title="Git SSH Key 生成步骤">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>大情人节的我要写一篇关于生产ssh key的文章，虽然也是从网上看到的，但是每次给github项目添加的时候还是要搜索，所以这里总结一下</p>
-<p>Git是分布式的代码管理工具，远程的代码管理是基于SSH的，所以要使用远程的Git则需要SSH的配置。<br>github的SSH配置如下：</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/gitCreateSSH_Key/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/oninput/" itemprop="url">
-                  实时验证表单元素-oninput
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-11-16T16:20:00+08:00" content="2015-11-16">
-              2015-11-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/html5/" itemprop="url" rel="index">
-                    <span itemprop="name">html5</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/oninput/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/oninput/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/oninput/" class="leancloud_visitors" data-flag-title="实时验证表单元素-oninput">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>前些天一个前端群里的网友想要实时验证表单元素，也就是在输入的同时验证输入是否符合规范，于是我就进行了研究，发现了oninput（ie6/7/8 用onpropertychange）<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/oninput/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/video/" itemprop="url">
-                  html5之video探索
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-16T17:48:00+08:00" content="2015-09-16">
-              2015-09-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/html5/" itemprop="url" rel="index">
-                    <span itemprop="name">html5</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/video/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/video/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/video/" class="leancloud_visitors" data-flag-title="html5之video探索">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>拖到今天才更新，首先video标签是html5新增的重要标签，前些日子google好像说不支持flash了，大快人心啊~~我是在搜索video相关东西的时候看到简书上一篇文章，所以想在自己博客也详细的讲一下，也是借鉴了许多文章，先贴出一些基础的东西，然后我实践之后再来贴代码和相关api</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/video/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/css- selector/" itemprop="url">
-                  一个对css选择器有趣的解释
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-11T14:48:00+08:00" content="2015-09-11">
-              2015-09-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/css- selector/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/css- selector/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/css- selector/" class="leancloud_visitors" data-flag-title="一个对css选择器有趣的解释">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>今天搜索jquery选择器原理结果搜到了一个对css选择器中的空格;&gt;;+;~的有意思解释，（其实还有一种关系：div.aaron，中间没有空格表示了选取一个class为aaron的div节点）</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/css- selector/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1068,7 +1081,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-count">56</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1076,7 +1089,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1085,7 +1098,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

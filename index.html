@@ -259,6 +259,680 @@
             
               
                 
+                <a class="post-title-link" href="/blog/js操作符/" itemprop="url">
+                  js中的特别的操作符
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-10T12:44:00+08:00" content="2017-04-10">
+              2017-04-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/js操作符/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/js操作符/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/js操作符/" class="leancloud_visitors" data-flag-title="js中的特别的操作符">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>运算符就是完成操作的一系列符号，它有七类： 赋值运算符（=,+=,-=,<em>=,/=,%=,&lt;&lt;=,&gt;&gt;=,|=,&amp;=）、算术运算符(+,-,</em>,/,++,–,%)、比较运算符(&gt;,&lt;,&lt;=,&gt;=,==,===,!=,!==)、逻辑运算符(||,&amp;&amp;,!)、条件运算(?:)、位移运算符(|,&amp;,&lt;&lt;,&gt;&gt;,~,^)和字符串运算符(+)</p>
+<p>在js当中用好操作符可以节省大量的代码，而且还避免出错</p>
+<h3 id="按位取反"><a href="#按位取反" class="headerlink" title="按位取反:~"></a>按位取反:~</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">4</span>;</div><div class="line"><span class="built_in">console</span>.log(~a)<span class="comment">//-5</span></div><div class="line"><span class="keyword">var</span> b = <span class="number">-6</span>;</div><div class="line"><span class="built_in">console</span>.log(~b)<span class="comment">//5</span></div></pre></td></tr></table></figure>
+<p>类型转换<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">~~<span class="literal">true</span> == <span class="number">1</span></div><div class="line">~~<span class="literal">false</span> == <span class="number">0</span></div><div class="line">~~<span class="string">""</span> == <span class="number">0</span></div><div class="line">~~[] == <span class="number">0</span></div><div class="line">~~<span class="literal">undefined</span> ==<span class="number">0</span></div><div class="line">~~!<span class="literal">undefined</span> == <span class="number">1</span></div><div class="line">~~<span class="literal">null</span> == <span class="number">0</span></div><div class="line">~~!<span class="literal">null</span> == <span class="number">1</span></div></pre></td></tr></table></figure></p>
+<p>是否包含指定字符<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a=<span class="string">'abcd'</span>;</div><div class="line"><span class="keyword">var</span> b=<span class="string">'b'</span>;</div><div class="line"><span class="keyword">if</span>(~a.indexOf(b))&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'有'</span>+b) <span class="comment">//有</span></div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'无'</span>+b)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="两个数的二进制进行运算"><a href="#两个数的二进制进行运算" class="headerlink" title="两个数的二进制进行运算:|"></a>两个数的二进制进行运算:|</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.3</span> | <span class="number">0</span> <span class="comment">//1,取整num | 0</span></div></pre></td></tr></table></figure>
+<h3 id="右移运算符-gt-gt-使指定值的所有位都右移规定的次数"><a href="#右移运算符-gt-gt-使指定值的所有位都右移规定的次数" class="headerlink" title="右移运算符&gt;&gt;使指定值的所有位都右移规定的次数"></a>右移运算符&gt;&gt;使指定值的所有位都右移规定的次数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">50</span> &gt;&gt; <span class="number">1</span> <span class="comment">//25,取半num &gt;&gt; 1</span></div><div class="line"><span class="comment">//鸡肋，直接num/2</span></div></pre></td></tr></table></figure>
+<h3 id="或者"><a href="#或者" class="headerlink" title="或者 ||"></a>或者 ||</h3><p>它和&amp;&amp;都称为短路的运算符，&amp;&amp;是只要第一个为假后面的不执行，&amp;&amp;是只要第一个是真后面的不执行<br>成长值评级<br>需求：<br>成长值为5是1星；<br>成长值为10是2星；<br>成长值为12是3星；<br>成长值为15是4星；<br>其他都是0星。<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(&#123;<span class="symbol">'5</span><span class="symbol">':1</span>,<span class="symbol">'10</span><span class="symbol">':2</span>,<span class="symbol">'12</span><span class="symbol">':3</span>,<span class="symbol">'15</span><span class="symbol">':4</span>&#125;[<span class="name">val</span>] || <span class="number">0</span>)<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<h3 id="位运算-amp"><a href="#位运算-amp" class="headerlink" title="位运算:&amp;"></a>位运算:&amp;</h3><p>利用&amp;判断奇偶<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num=<span class="number">3</span>;</div><div class="line"><span class="keyword">if</span> (num &amp; <span class="number">1</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"num是奇数"</span>); <span class="comment">//num是奇数</span></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"num是偶数"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="交换两个数字的值："><a href="#交换两个数字的值：" class="headerlink" title="交换两个数字的值： ^="></a>交换两个数字的值： ^=</h3><p>使用位运行符：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="number">1</span>, num2 = <span class="number">2</span>;</div><div class="line">num1 ^= num2;</div><div class="line">num2 ^= num1;</div><div class="line">num1 ^= num2;</div><div class="line"><span class="built_in">console</span>.log(num1,num2); <span class="comment">//2 1</span></div></pre></td></tr></table></figure></p>
+<p>使用数组：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num1 = <span class="number">1</span>, num2 = <span class="number">2</span>;</div><div class="line">num1 = [num2, num2 = num1][<span class="number">0</span>];</div><div class="line"><span class="built_in">console</span>.log(num1,num2); <span class="comment">//2 1</span></div></pre></td></tr></table></figure></p>
+<h3 id="2的n次方：-lt-lt-和"><a href="#2的n次方：-lt-lt-和" class="headerlink" title="2的n次方： &lt;&lt; 和 **"></a>2的n次方： &lt;&lt; 和 **</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>&lt;&lt;<span class="number">3</span> <span class="comment">//8</span></div><div class="line"><span class="number">2</span>**<span class="number">3</span> <span class="comment">//8</span></div><div class="line"><span class="number">-1</span>&lt;&lt;<span class="number">3</span> <span class="comment">//-8</span></div><div class="line"><span class="number">-2</span>**<span class="number">3</span> <span class="comment">// 报错,正确的方式(-2)**8</span></div><div class="line">-(<span class="number">2</span>**<span class="number">3</span>) <span class="comment">//-8</span></div><div class="line"><span class="number">3</span>&lt;&lt;<span class="number">2</span> <span class="comment">//12 错误</span></div><div class="line"><span class="number">3</span>**<span class="number">2</span> <span class="comment">//9 正确</span></div><div class="line"></div><div class="line"><span class="comment">//结论：还是用**吧</span></div></pre></td></tr></table></figure>
+<h3 id="指字符串开头：-和"><a href="#指字符串开头：-和" class="headerlink" title="指字符串开头： ! 和 ^"></a>指字符串开头： ! 和 ^</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str1=<span class="string">'abc'</span>;</div><div class="line"><span class="keyword">var</span> str2=<span class="string">'a'</span>;</div><div class="line"><span class="keyword">if</span>(!str1.indexOf(str2))&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'是开头'</span>)</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'不是开头'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用正则方式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/^a/.test(<span class="string">'abc'</span>) <span class="comment">//a开头，true</span></div><div class="line">/c$/.test(<span class="string">'abc'</span>) <span class="comment">//c结尾，true</span></div></pre></td></tr></table></figure></p>
+<h3 id="字符串转数字："><a href="#字符串转数字：" class="headerlink" title="字符串转数字： +"></a>字符串转数字： +</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">'123'</span>;</div><div class="line"><span class="keyword">typeof</span>(str) <span class="comment">//string</span></div><div class="line"><span class="keyword">typeof</span>(+str) <span class="comment">//number</span></div></pre></td></tr></table></figure>
+<h3 id="转为-Boolean-值："><a href="#转为-Boolean-值：" class="headerlink" title="转为 Boolean 值： !!"></a>转为 Boolean 值： !!</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">!!<span class="string">'text'</span> <span class="comment">//true</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/class/" itemprop="url">
+                  JavaScript中的__proto__和prototype
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-06T09:04:00+08:00" content="2017-04-06">
+              2017-04-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/class/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/class/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/class/" class="leancloud_visitors" data-flag-title="JavaScript中的__proto__和prototype">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>在JavaScript中类的概念的是非常重要的，在es6中加入了class关键词，可见类的重要性了；在面向对象编程的过程中类的概念是必须知晓的；同时构造函数在这里面应用非常多</p>
+</blockquote>
+<p>new表达式是配合构造函数使用的，例如<code>new String(&quot;a string&quot;)</code>，调用内置的String函数构造了一个字符串对象。下面我们用构造函数的方式来重新创建一个实现同样功能的对象，首先是定义构造函数，然后是调用new表达式：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">o</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">"abcd"</span>;</div><div class="line">	<span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"hi"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> oo = <span class="keyword">new</span> o();</div></pre></td></tr></table></figure></p>
+<p>在使用new关键词的时候发生了几件事<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;<span class="comment">//初始化空对象</span></div><div class="line">obj.__proto__ = o.prototype;<span class="comment">//这是一步重要的操作，后面详细说明</span></div><div class="line">o.call(obj);<span class="comment">//将构造函数的作用域给新的对象，也就是更新了obj的作用域</span></div><div class="line"><span class="keyword">return</span> obj;<span class="comment">//返回这个新对象，在构造函数中没有直接的代码去return，默认的会返回</span></div></pre></td></tr></table></figure></p>
+<p>上面4个步骤中，最关键的当属第二步了，每个对象内部都会初始化一个属性<code>__proto__</code>，当然各个浏览器的支持不尽相同，当我们访问对象中的某一个属性时，如果没有的话，他会去<code>__proto__</code>里面去找，如果还没有再在<code>__proto__</code>里面的<code>__proto__</code>去找，就这样一直找下去，<code>__proto__</code>是对象自带属性；</p>
+<p>对于prototype来说，他是函数的自带属性，可以被当做一个对象来使用；同事对于prototype里也有两个元素，1：<code>constructor</code>指向函数本身，2：<code>__proto__</code>同对象中的<code>__proto__</code>。</p>
+<p>构造函数在创建对象是最大的特点就是会把自身的prototype按值传递给被构造对象的<strong>proto</strong>，因为prototype可以当做对象来看，所以是按引用传递</p>
+<p>总结：<code>__proto__</code>是对象自带的属性，<code>prototype</code>是函数自带的属性；同时<code>prototype</code>可以被当做一个对象来看待，所以它内部也有<code>__proto__</code>，不同的是还有<code>constructor</code>这个指向函数本身的属性；所以我的理解就是函数其实算是特殊的对象；这两个的千丝万缕的联系才能使js模拟类成为可能</p>
+<p>所以弄明白这个，后续的几种创建类模式会很容易懂，还有继承等特性</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/20170307-WebSocket /" itemprop="url">
+                  从ajax到websocket
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-07T14:44:00+08:00" content="2017-03-07">
+              2017-03-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/20170307-WebSocket /#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/20170307-WebSocket /" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/20170307-WebSocket /" class="leancloud_visitors" data-flag-title="从ajax到websocket">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这次主要全面的说一下关于网页和后台的通信这方面的，同时自己在查阅资料的时候也能巩固自己的知识体系；<br>ajax的诞生可能是由于我们提交表单的时候会跳转吧，这样对于交互不太好，可能这时候就需要像ajax这样的方式来进行无load的信息传递；<br>在我理解中网页的通信其实从浏览器开始请求页面就开始了，这应该算是一次性请求吧；在一个就是a标签也算是通信吧，勉强吧，其实除了a标签像img，iframe，script，link等都算是通信吧，只不过他们内部的有一些限制；在我看来打开浏览器的开发者里面的network里所有的请求都算是通信，有些请求的是静态资源，有些则是我们今天要来说的ajax;下面我要从ajax的含义，实现的方式这两个方面。</p>
+<h1 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h1><h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><p>几种技术的结合，从ajax字面上理解是异步通过js去请求xml数据，但是现在同步异步都可以，通过js请求数据现在数据大部分是json格式的，结构清晰；不刷新页面情况下与后端进行交互；客户端主动请求，然后服务端去响应</p>
+<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p>通过不同的方式去请求数据也能解决一些传输中的问题例如数据量和跨域问题。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/20170307-WebSocket /#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/20170307-jsonp/" itemprop="url">
+                  自制原生jsonp请求
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-07T14:44:00+08:00" content="2017-03-07">
+              2017-03-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/20170307-jsonp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/20170307-jsonp/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/20170307-jsonp/" class="leancloud_visitors" data-flag-title="自制原生jsonp请求">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ajax</span>(<span class="params">op</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> url = op.url;</div><div class="line">	<span class="keyword">var</span> timep = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</div><div class="line">	<span class="keyword">var</span> callbackName = <span class="string">'azq'</span> + timep;</div><div class="line">	<span class="built_in">window</span>[callbackName] = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		op.success(e)</div><div class="line">	&#125;</div><div class="line">	url += url.indexOf(<span class="string">'?'</span>) &gt; <span class="number">0</span> ? (<span class="string">"&amp;callback="</span> + callbackName) : (<span class="string">"?callback="</span> + callbackName);</div><div class="line">	<span class="keyword">var</span> script = D.createElement(<span class="string">'script'</span>);</div><div class="line">	script.setAttribute(<span class="string">"type"</span>, <span class="string">"text/javascript"</span>);</div><div class="line">	script.src = url;</div><div class="line">	D.body.appendChild(script);</div><div class="line">	script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		D.body.removeChild(script);</div><div class="line">	&#125;</div><div class="line">	script.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		D.body.removeChild(script);</div><div class="line">		op.error(e)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Ajax(&#123;</div><div class="line">	<span class="attr">url</span>: <span class="string">'xxxxxxxx'</span>,</div><div class="line">	<span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;	</div><div class="line">		<span class="built_in">console</span>.log(data)</div><div class="line">	&#125;,</div><div class="line">	<span class="attr">error</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"加载失败！"</span>)</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>简易的jsonp请求，每次调用会生成一个全局的函数来接收传过来的json格式的数据</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/getIp/" itemprop="url">
+                  js获取ip地址
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-21T14:44:00+08:00" content="2017-02-21">
+              2017-02-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/getIp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/getIp/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/getIp/" class="leancloud_visitors" data-flag-title="js获取ip地址">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>js获取ip 这个其实是个伪命题，因为js没有实力获取ip；那我怎么搬起石头砸自己脚呢；我说的方式通过其他方式；<br>一般ip后端的可以获取、客户端是可以的，然后他们给js提供一个接口，这样js就可以吃人家剩的了，/微笑<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://pv.sohu.com/cityjson?ie=utf-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>    </div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">  </span></div><div class="line">	<span class="keyword">var</span> ip=returnCitySN[<span class="string">"cip"</span>];  </div><div class="line">	alert(ip);  </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>可能还有其他在线的可以获取，这里提供个思路，哈哈</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/blog/2017-start/" itemprop="url">
                   2017新的起点新的开始
                 </a>
@@ -367,676 +1041,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/gulp-webpack/" itemprop="url">
-                  gulp和webpack的完美结合
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-03T14:44:00+08:00" content="2017-02-03">
-              2017-02-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/gulp-webpack/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/gulp-webpack/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/gulp-webpack/" class="leancloud_visitors" data-flag-title="gulp和webpack的完美结合">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>年后的第一天简直无聊到爆炸了，所以写一篇文章来慢慢恢复工作状态吧<br>之前写过gulp和webpack来实现一些自动化的东西，但是两个各自有自己的优点，现在我的需求就是h5单页，用es6来写<br>gulp来实现实时监控文件的变化以及css相关处理<br>webpack则处理js</p>
-<h1 id="包依赖-package-json"><a href="#包依赖-package-json" class="headerlink" title="包依赖(package.json)"></a>包依赖(package.json)</h1><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"gulp-temp"</span>,</div><div class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</div><div class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</div><div class="line">  <span class="attr">"scripts"</span>: &#123;</div><div class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"author"</span>: <span class="string">""</span>,</div><div class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span>,</div><div class="line">  <span class="attr">"devDependencies"</span>: &#123;</div><div class="line">    <span class="attr">"babel-core"</span>: <span class="string">"^6.21.0"</span>,</div><div class="line">    <span class="attr">"babel-loader"</span>: <span class="string">"^6.2.10"</span>,</div><div class="line">    <span class="attr">"babel-preset-es2015"</span>: <span class="string">"^6.18.0"</span>,</div><div class="line">    <span class="attr">"gulp"</span>: <span class="string">"^3.9.1"</span>,</div><div class="line">    <span class="attr">"gulp-autoprefixer"</span>: <span class="string">"^3.1.1"</span>,</div><div class="line">    <span class="attr">"gulp-concat"</span>: <span class="string">"^2.6.1"</span>,</div><div class="line">    <span class="attr">"gulp-cssnano"</span>: <span class="string">"^2.1.2"</span>,</div><div class="line">    <span class="attr">"gulp-less"</span>: <span class="string">"^3.3.0"</span>,</div><div class="line">    <span class="attr">"gulp-plumber"</span>: <span class="string">"^1.1.0"</span>,</div><div class="line">    <span class="attr">"gulp-postcss"</span>: <span class="string">"^6.2.0"</span>,</div><div class="line">    <span class="attr">"gulp-rename"</span>: <span class="string">"^1.2.2"</span>,</div><div class="line">    <span class="attr">"gulp-uglify"</span>: <span class="string">"^2.0.0"</span>,</div><div class="line">    <span class="attr">"gulp-webpack"</span>: <span class="string">"^1.5.0"</span>,</div><div class="line">    <span class="attr">"postcss-px2rem"</span>: <span class="string">"^0.3.0"</span>,</div><div class="line">    <span class="attr">"webpack"</span>: <span class="string">"^1.14.0"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/gulp-webpack/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/bugs-wx/" itemprop="url">
-                  关于x5内核浏览器对于overflow-x的支持
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-11T14:44:00+08:00" content="2017-01-11">
-              2017-01-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/bugs-wx/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/bugs-wx/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/bugs-wx/" class="leancloud_visitors" data-flag-title="关于x5内核浏览器对于overflow-x的支持">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近碰到了一系列的bug，有系统本身的也有浏览器的原因，每个前端盼望着有一天内核的统一</p>
-<h2 id="环境x5内核浏览器-安卓"><a href="#环境x5内核浏览器-安卓" class="headerlink" title="环境x5内核浏览器 安卓"></a>环境x5内核浏览器 安卓</h2><h2 id="bug重现"><a href="#bug重现" class="headerlink" title="bug重现"></a>bug重现</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 100%; overflow-y: auto;overflow-x: hidden;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 120%;height: 100vh;background: red;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 20vh;background: black"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>出现上述情况是因为宽超出，整体高超出；就会出现这种<code>overflow-x: hidden</code>失效的情况</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>将内容再包一层<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 100%; overflow-y: auto; overflow-x: hidden;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: auto;overflow-y: auto; overflow-x: hidden;"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 120%;height: 100vh;background: red;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 20vh;background: black"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>就这样解决了</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/gulp/" itemprop="url">
-                  前端如何用gulp工具来自动化自己的项目
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-15T14:44:00+08:00" content="2016-12-15">
-              2016-12-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/gulp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/gulp/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/gulp/" class="leancloud_visitors" data-flag-title="前端如何用gulp工具来自动化自己的项目">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>好久没有更新了，实在是太忙了，一个项目接着一个，最终还是因为懒。<br>之前写过一个gulp感觉写得不是很详细，也是入门的时候，有很多东西不理解，所以今天进一步的去写一下gulp吧</p>
-<p>gulp的工作原理其实就是文档流，就是干的事情有先有后，就是这个工具处理完返回一个文档流给下一个工具再来处理，最后在转成文件的形式(个人理解)</p>
-<p>这里主要说gulp的配置，用它来为我们的项目来服务，那么我们先来看看我的这个配置都能干嘛<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/gulp/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/center/" itemprop="url">
-                  居中大法好
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-01T11:09:00+08:00" content="2016-12-01">
-              2016-12-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/css3/" itemprop="url" rel="index">
-                    <span itemprop="name">css3</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/center/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/center/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/center/" class="leancloud_visitors" data-flag-title="居中大法好">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="flexbox"><a href="#flexbox" class="headerlink" title="flexbox"></a>flexbox</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></div><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">	<span class="attribute">display</span>: flex;</div><div class="line">	<span class="attribute">flex-direction</span>: row;</div><div class="line">	<span class="attribute">justify-content</span>: center;</div><div class="line">	<span class="attribute">align-items</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.center</span> &#123;</div><div class="line">	<span class="attribute">background</span>: <span class="number">#BDD8F5</span>;</div><div class="line">	<span class="attribute">color</span>: <span class="number">#000</span>;</div><div class="line">	<span class="attribute">text-align</span>: center;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">14px</span>;</div><div class="line">	<span class="attribute">padding</span>: <span class="number">10px</span></div><div class="line">&#125;</div><div class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span>BigCan<span class="tag">&lt;<span class="name">br</span> /&gt;</span>公众号<span class="tag">&lt;<span class="name">br</span> /&gt;</span>infefe<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/center/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/flex/" itemprop="url">
-                  Flexbox该怎么用以及应用场景
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-30T11:09:00+08:00" content="2016-11-30">
-              2016-11-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/css3/" itemprop="url" rel="index">
-                    <span itemprop="name">css3</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/flex/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/flex/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/flex/" class="leancloud_visitors" data-flag-title="Flexbox该怎么用以及应用场景">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Flex作为css3中的新属性，一直被大家所熟知但是，应用的地方确实很少，那么让我们一起来研究研究它吧<br>代码量比较大，请在pc端查看</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
-<li>设置了Flex布局后，子元素的float，clear，还有verticle-align属性都不起作用</li>
-<li>设置了display:flex属性的元素，称为Flex容器，他里面的所有子元素统称为容器成员，Flex容器有两根坐标轴：水平的叫主轴和垂直的叫交叉轴</li>
-<li>flex是display的一个属性值。与之相当应的还有一个是inline-flex。</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/flex/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1077,7 +1086,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-count">56</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1085,7 +1094,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1094,7 +1103,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
