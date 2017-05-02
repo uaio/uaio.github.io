@@ -259,6 +259,135 @@
             
               
                 
+                <a class="post-title-link" href="/blog/prevent-iframe/" itemprop="url">
+                  防止被嵌套iframe
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-26T22:00:00+08:00" content="2016-06-26">
+              2016-06-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/bugs/" itemprop="url" rel="index">
+                    <span itemprop="name">bugs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/prevent-iframe/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/prevent-iframe/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/prevent-iframe/" class="leancloud_visitors" data-flag-title="防止被嵌套iframe">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近同事做了个h5放到了我们m.sohu.com上，当通过uc搜狐新闻主页访问这个h5的时候被uc用iframe嵌套到了他们自己的页面，从而使iframe里的布局错乱，真是醉了，最后找到了解决办法是判断主域名和iframe引用域名是否一致，代码如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(top != self)&#123;</div><div class="line">    top.location = self.location</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/blog/adaptation_web/" itemprop="url">
                   关于移动端的各种适配，以及各种坑
                 </a>
@@ -874,139 +1003,6 @@
           <p>开发移动端网页对于click的延迟应该很清楚的，移动端可以用touchstart来代替，但是一些复杂的交互可能不能满足，可能需要用hammerjs这类手势的库，但是平时一些细节上像点击出现按钮变化然后在移除效果再执行后面的程序的，就没有必要引入库了，所以昨天查了一天的资料，然后写了一个自定义的tap，请大家指正错误</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/blog/tap/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/gulp-start/" itemprop="url">
-                  gulp初体验，进击nodejs第一站
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-25T09:14:00+08:00" content="2016-02-25">
-              2016-02-25
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/gulp-start/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/gulp-start/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/gulp-start/" class="leancloud_visitors" data-flag-title="gulp初体验，进击nodejs第一站">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://www.gratisography.com/pictures/283_1.jpg" class="full-image" /><br>今年我制定了学习nodejs的计划，对于前端来讲使用nodejs来工作的话，还是借助他的npm的各种包来实现一些自动化的东西，最近我学习了gulp，按照网上说的它更适合nodejs的工作流，可以通过它的一些插件来实现less编译，js、css格式化以及合并文件等等。</p>
-<hr>
-<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><p>其实也没有特别的文档目录结构，只是人们慢慢的总结的比较合理规范的目录<br>/项目根目录<br>—/src<br>—–/less<br>—–/images<br>—–/js<br>—–*.html<br>gulpfile.js<br>package.json<br>//node_modules//安装包依赖之后自动生成的<br>//—/web//编译后的文件放到这里</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/gulp-start/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

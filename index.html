@@ -259,6 +259,146 @@
             
               
                 
+                <a class="post-title-link" href="/blog/判断数据类型/" itemprop="url">
+                  js中数据类型以及判断
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-27T14:48:00+08:00" content="2017-04-27">
+              2017-04-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/判断数据类型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/判断数据类型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/判断数据类型/" class="leancloud_visitors" data-flag-title="js中数据类型以及判断">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>数据类型<br>基本类型：string,number,boolean<br>特殊类型：undefined,null<br>引用类型：Object,Function,Array,Date,…</p>
+<ol>
+<li>typeof</li>
+</ol>
+<p>typeof 返回一个表示数据类型的字符串，返回结果包括：number、boolean、string、object、undefined、function等6种数据类型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> <span class="string">''</span>; <span class="comment">// string 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="number">1</span>; <span class="comment">// number 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">true</span>; <span class="comment">//boolean 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>; <span class="comment">//undefined 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">null</span>; <span class="comment">//object 无效</span></div><div class="line"><span class="keyword">typeof</span> [] ; <span class="comment">//object 无效</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(); <span class="comment">// function 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">//object 无效</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">RegExp</span>(); <span class="comment">//object 无效</span></div></pre></td></tr></table></figure>
+<p>typeof 可以对JS基础数据类型做出准确的判断，而对于引用类型返回的基本上都是object, 其实返回object也没有错，因为所有对象的原型链最终都指向了Object,Object是所有对象的’祖宗’。<br>但当我们需要知道某个对象的具体类型时，typeof 就显得有些力不从心了。</p>
+<ol>
+<li>instanceof<br>instanceof 是用来判断 A 是否为 B 的实例对，表达式为：A instanceof B，如果A是B的实例，则返回true,否则返回false。 在这里需要特别注意的是：instanceof检测的是原型</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/判断数据类型/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/blog/settimeout/" itemprop="url">
                   settimeout(fn,0)写法的解析
                 </a>
@@ -657,136 +797,6 @@
             
               
                 
-                <a class="post-title-link" href="/blog/20170307-jsonp/" itemprop="url">
-                  自制原生jsonp请求
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-07T14:44:00+08:00" content="2017-03-07">
-              2017-03-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/20170307-jsonp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/20170307-jsonp/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/20170307-jsonp/" class="leancloud_visitors" data-flag-title="自制原生jsonp请求">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ajax</span>(<span class="params">op</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> url = op.url;</div><div class="line">	<span class="keyword">var</span> timep = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</div><div class="line">	<span class="keyword">var</span> callbackName = <span class="string">'azq'</span> + timep;</div><div class="line">	<span class="built_in">window</span>[callbackName] = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		op.success(e)</div><div class="line">	&#125;</div><div class="line">	url += url.indexOf(<span class="string">'?'</span>) &gt; <span class="number">0</span> ? (<span class="string">"&amp;callback="</span> + callbackName) : (<span class="string">"?callback="</span> + callbackName);</div><div class="line">	<span class="keyword">var</span> script = D.createElement(<span class="string">'script'</span>);</div><div class="line">	script.setAttribute(<span class="string">"type"</span>, <span class="string">"text/javascript"</span>);</div><div class="line">	script.src = url;</div><div class="line">	D.body.appendChild(script);</div><div class="line">	script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		D.body.removeChild(script);</div><div class="line">	&#125;</div><div class="line">	script.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		D.body.removeChild(script);</div><div class="line">		op.error(e)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Ajax(&#123;</div><div class="line">	<span class="attr">url</span>: <span class="string">'xxxxxxxx'</span>,</div><div class="line">	<span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;	</div><div class="line">		<span class="built_in">console</span>.log(data)</div><div class="line">	&#125;,</div><div class="line">	<span class="attr">error</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"加载失败！"</span>)</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>简易的jsonp请求，每次调用会生成一个全局的函数来接收传过来的json格式的数据</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/blog/20170307-WebSocket /" itemprop="url">
                   从ajax到websocket
                 </a>
@@ -920,8 +930,8 @@
             
               
                 
-                <a class="post-title-link" href="/blog/getIp/" itemprop="url">
-                  js获取ip地址
+                <a class="post-title-link" href="/blog/20170307-jsonp/" itemprop="url">
+                  自制原生jsonp请求
                 </a>
               
             
@@ -934,8 +944,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-21T14:44:00+08:00" content="2017-02-21">
-              2017-02-21
+            <time itemprop="dateCreated" datetime="2017-03-07T14:44:00+08:00" content="2017-03-07">
+              2017-03-07
             </time>
           </span>
 
@@ -964,8 +974,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/blog/getIp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/getIp/" itemprop="commentsCount"></span>
+                <a href="/blog/20170307-jsonp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/20170307-jsonp/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -975,7 +985,7 @@
 
           
           
-             <span id="/blog/getIp/" class="leancloud_visitors" data-flag-title="js获取ip地址">
+             <span id="/blog/20170307-jsonp/" class="leancloud_visitors" data-flag-title="自制原生jsonp请求">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -999,8 +1009,8 @@
       
         
           
-            <p>js获取ip 这个其实是个伪命题，因为js没有实力获取ip；那我怎么搬起石头砸自己脚呢；我说的方式通过其他方式；<br>一般ip后端的可以获取、客户端是可以的，然后他们给js提供一个接口，这样js就可以吃人家剩的了，/微笑<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://pv.sohu.com/cityjson?ie=utf-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>    </div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">  </span></div><div class="line">	<span class="keyword">var</span> ip=returnCitySN[<span class="string">"cip"</span>];  </div><div class="line">	alert(ip);  </div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>可能还有其他在线的可以获取，这里提供个思路，哈哈</p>
+            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ajax</span>(<span class="params">op</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> url = op.url;</div><div class="line">	<span class="keyword">var</span> timep = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</div><div class="line">	<span class="keyword">var</span> callbackName = <span class="string">'azq'</span> + timep;</div><div class="line">	<span class="built_in">window</span>[callbackName] = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		op.success(e)</div><div class="line">	&#125;</div><div class="line">	url += url.indexOf(<span class="string">'?'</span>) &gt; <span class="number">0</span> ? (<span class="string">"&amp;callback="</span> + callbackName) : (<span class="string">"?callback="</span> + callbackName);</div><div class="line">	<span class="keyword">var</span> script = D.createElement(<span class="string">'script'</span>);</div><div class="line">	script.setAttribute(<span class="string">"type"</span>, <span class="string">"text/javascript"</span>);</div><div class="line">	script.src = url;</div><div class="line">	D.body.appendChild(script);</div><div class="line">	script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		D.body.removeChild(script);</div><div class="line">	&#125;</div><div class="line">	script.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		D.body.removeChild(script);</div><div class="line">		op.error(e)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Ajax(&#123;</div><div class="line">	<span class="attr">url</span>: <span class="string">'xxxxxxxx'</span>,</div><div class="line">	<span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;	</div><div class="line">		<span class="built_in">console</span>.log(data)</div><div class="line">	&#125;,</div><div class="line">	<span class="attr">error</span>: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"加载失败！"</span>)</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>简易的jsonp请求，每次调用会生成一个全局的函数来接收传过来的json格式的数据</p>
 
           
         
